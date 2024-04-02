@@ -13,18 +13,19 @@ public class Main {
 
         Arrays.sort(arr);
         
-        int cnt = 0;
+        int cnt = 0, index = 0;
         for(int i = 0; i < n; i ++) {
             String str = arr[i].substring(0, T.length());
             if(str.equals(T)) {
                 cnt ++;
-                //System.out.println(i + " " + cnt);
+                index = i;
             }
 
             if(cnt == k) {
-                System.out.println(arr[i]);
                 break;
             }
         }
+
+        System.out.println(arr[index]);
     }
 }
