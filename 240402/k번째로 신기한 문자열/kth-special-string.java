@@ -15,6 +15,7 @@ public class Main {
         
         int cnt = 0, index = 0;
         for(int i = 0; i < n; i ++) {
+            if(T.length() > arr[i].length()) continue;
             String str = arr[i].substring(0, T.length());
             if(str.equals(T)) {
                 cnt ++;
