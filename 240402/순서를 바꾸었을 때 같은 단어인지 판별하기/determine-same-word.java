@@ -7,18 +7,18 @@ public class Main {
         char[] arr1 = str1.toCharArray(), arr2 = str2.toCharArray();
 
         if(arr1.length != arr2.length) System.out.println("No");
+        else {
+            Arrays.sort(arr1);
+            Arrays.sort(arr2);
 
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
+            for(int i = 0; i < arr1.length; i ++) {
+                if(arr1[i] != arr2[i]) {
+                    System.out.println("No");
+                    break;
+                }
 
-        for(int i = 0; i < arr1.length; i ++) {
-            if(arr1[i] != arr2[i]) {
-                System.out.println("No");
-                break;
+                if(i == arr1.length - 1) System.out.println("Yes");
             }
-
-            if(i == arr1.length - 1) System.out.println("Yes");
         }
-
     }
 }
