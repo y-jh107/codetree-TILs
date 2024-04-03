@@ -5,6 +5,9 @@ public class Main {
 
     public static int countDays(int d, int h, int m) {
         if(d < currentDate) return -1;
+        if(d == currentDate && h > currentHour) return -1;
+        if(d == currentDate && h < currentHour && m > currentMinute) return -1;
+
         int cnt = 0;
 
         while(true) {
