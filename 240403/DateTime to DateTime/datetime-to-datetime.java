@@ -4,6 +4,7 @@ public class Main {
     public static int currentDate = 11, currentHour = 11, currentMinute = 11;
 
     public static int countDays(int d, int h, int m) {
+        if(d < currentDate) return -1;
         int cnt = 0;
 
         while(true) {
