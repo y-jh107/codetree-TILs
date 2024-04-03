@@ -16,6 +16,8 @@ public class Main {
         while(diff < 0)
             diff += 7;
 
+        diff %= 7;
+        
         System.out.println(day[diff]);
     }
 
