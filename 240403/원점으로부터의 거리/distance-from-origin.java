@@ -6,7 +6,7 @@ class Point implements Comparable<Point> {
         this.x = x;
         this.y = y;
         this.num = num;
-        if(x > 0 && y > 0) dis = x + y;
+        if(x >= 0 && y >= 0) dis = x + y;
         else if(x > 0 && y < 0) dis = x - y;
         else if(x < 0 && y > 0) dis = y - x;
         else dis = -(x + y);
