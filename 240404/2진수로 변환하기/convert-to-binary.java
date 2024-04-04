@@ -6,8 +6,13 @@ public class Main {
         int n = sc.nextInt(), index = 0;
         int[] digit = new int[30];
 
-        while(n > 0) {
-            digit[index++] = n % 2;
+        while (true) {
+            if(n < 2) {
+                digit[index ++] = n;
+                break;
+            }
+
+            digit[index ++] = n % 2;
             n /= 2;
         }
 
