@@ -12,7 +12,7 @@ public class Main {
             x2 += Math.abs(x1);
             x1 += Math.abs(x1);
 
-            System.out.println(x1 + " " + x2);
+            //System.out.println(x1 + " " + x2);
 
             for(int j = x1; j < x2; j ++) {
                 arr[j] += 1;
