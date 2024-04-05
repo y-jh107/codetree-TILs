@@ -6,10 +6,10 @@ public class Main {
         int n = sc.nextInt(), k = sc.nextInt();
         int[] cleaned = new int[n];
 
-        for(int i = 1; i <= k; i ++) {
+        for(int i = 0; i < k; i ++) {
             int a = sc.nextInt() - 1, b = sc.nextInt() - 1;
             for(int j = a; j <= b; j ++) {
-                cleaned[i] += 1;
+                cleaned[j] += 1;
             }
         }
 
