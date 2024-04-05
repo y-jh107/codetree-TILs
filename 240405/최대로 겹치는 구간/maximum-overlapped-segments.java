@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,9 +10,10 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             int x1 = sc.nextInt(), x2 = sc.nextInt();
             if(x1 < 0 || x2 < 0) {
-                x1 += n - 1;
-                x2 += n - 1;
+                x1 += Math.abs(x1);
+                x2 += Math.abs(x1);
             }
+
             for(int j = x1; j < x2; j ++) {
                 arr[j] += 1;
             }
