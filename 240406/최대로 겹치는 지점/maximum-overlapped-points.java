@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] check = new int[100];
+        int[] check = new int[110];
 
         while(n > 0) {
             int x1 = sc.nextInt(), x2 = sc.nextInt();
