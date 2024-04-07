@@ -13,21 +13,24 @@ public class Main {
             String dir = sc.next();
 
             if(dir.equals("R")) {
-                for(int j = current; j < current + x; j ++) {
-                    dirs[j] = "B";
-                    visited[j] ++;
-                    //System.out.println(j + " " + dirs[j] + " " + visited[j]);
+                while(x-- > 0) {
+                    dirs[current] = "B";
+                    visited[current] ++;
+                    current ++;
+                    if(x == 0) current --;
                 }
-                current += x;
+                //System.out.println(current);
             }
 
             else if(dir.equals("L")) {
-                for(int j = current - x; j < current; j ++) {
-                    dirs[j] = "W";
-                    visited[j] ++;
-                    //System.out.println(current + " " + dirs[j] + " " + visited[j]);
-                }
-                current -= x;
+                while(x -- > 0){
+                    dirs[current] = "W";
+                    visited[current] ++;
+                    current --;
+                    if(x == 0) current ++;
+                }   
+                
+                //System.out.println(current);
             }
         }
 
