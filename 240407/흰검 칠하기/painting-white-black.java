@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(), current = 1000;
-        int[] visited = new int[2001]; //방문 횟수를 저장한 배열
-        String[] colors = new String[2001]; // 다 끝나고 색을 저장하는 배열
-        String[] dirs = new String[2001]; //움직일때 색을 저장하는 배열
+        int n = sc.nextInt(), current = 10000;
+        int[] visited = new int[20001]; //방문 횟수를 저장한 배열
+        String[] colors = new String[20001]; // 다 끝나고 색을 저장하는 배열
+        String[] dirs = new String[20001]; //움직일때 색을 저장하는 배열
 
         for(int i = 0; i < n; i ++) {
             int x = sc.nextInt();
