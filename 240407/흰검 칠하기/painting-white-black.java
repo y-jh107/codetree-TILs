@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), current = 10000;
-        int[] visited = new int[20001]; //방문 횟수를 저장한 배열
+        int[] cntB = new int[20001];
+        int[] cntW = new int[20001]; //방문 횟수를 저장한 배열
         String[] colors = new String[20001]; // 다 끝나고 색을 저장하는 배열
         String[] dirs = new String[20001]; //움직일때 색을 저장하는 배열
 
@@ -16,7 +17,7 @@ public class Main {
             if(dir.equals("R")) {
                 while(x-- > 0) {
                     dirs[current] = "B";
-                    visited[current] ++;
+                    cntB[current] ++;
                     current ++;
                     if(x == 0) current --;
                 }
@@ -26,7 +27,7 @@ public class Main {
             else if(dir.equals("L")) {
                 while(x -- > 0){
                     dirs[current] = "W";
-                    visited[current] ++;
+                    cntW[current] ++;
                     current --;
                     if(x == 0) current ++;
                 }   
@@ -37,9 +38,9 @@ public class Main {
         for(int i = 0; i < colors.length; i ++) {
             if(dirs[i] == null) continue;
 
-            if(visited[i] >= 4) colors[i] = "G";
-            else if(visited[i] < 4 && dirs[i].equals("B")) colors[i] = "B";
-            else if(visited[i] < 4 && dirs[i].equals("W")) colors[i] = "W";
+            if(cntB[i] >= 2 && cntW[i] >= 2) colors[i] = "G";
+            else if(dirs[i].equals("B")) colors[i] = "B";
+            else if(dirs[i].equals("W")) colors[i] = "W";
         }
 
         int w = 0, b = 0, g = 0;
