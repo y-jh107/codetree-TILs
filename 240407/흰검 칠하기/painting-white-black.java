@@ -11,6 +11,7 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             int x = sc.nextInt();
             String dir = sc.next();
+            //System.out.println(current);
 
             if(dir.equals("R")) {
                 while(x-- > 0) {
@@ -29,7 +30,6 @@ public class Main {
                     current --;
                     if(x == 0) current ++;
                 }   
-                
                 //System.out.println(current);
             }
         }
