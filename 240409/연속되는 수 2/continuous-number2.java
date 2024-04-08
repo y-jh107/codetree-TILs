@@ -21,7 +21,7 @@ public class Main {
             }
 
             if(i > 0 && arr[i - 1] != arr[i]) {
-                System.out.println(cnt);
+                //System.out.println(cnt);
                 maxCnt = cnt;
                 
                 cnt = 0;
