@@ -8,6 +8,10 @@ public class Main {
             int x1 = sc.nextInt(), y1 = sc.nextInt();
             int x2 = sc.nextInt(), y2 = sc.nextInt();
 
+            x1 += 1000;
+            x2 += 1000;
+            y1 += 1000;
+            y2 += 1000;
             for(int j = x1; j < x2; j ++) {
                 for(int k = y1; k < y2; k ++) {
                     square[j][k] = i;
