@@ -14,7 +14,8 @@ public class Main {
             int v = sc.nextInt(), t = sc.nextInt();
 
             while(t -- > 0) {
-                A_point[indexA ++] = v;
+                A_point[indexA] = indexA * v;
+                indexA ++;
             }
         }
 
@@ -22,7 +23,8 @@ public class Main {
             int v = sc.nextInt(), t = sc.nextInt();
 
             while(t -- > 0) {
-                B_point[indexB ++] = v;
+                B_point[indexB] = indexB * v;
+                indexB ++;
             }
         }
 
