@@ -3,10 +3,12 @@ import java.util.*;
 class Developer {
     public boolean infect;
     public int num;
+    public int leftInfections;
 
-    public Developer(int num) {
+    public Developer(int num, int left) {
         infect = false;
         this.num = num;
+        this.leftInfections = left;
     }
 
     public void infection() {
@@ -26,8 +28,8 @@ public class Main {
         Developer[] d = new Developer[n];
 
         for (int i = 0; i < n; i ++) {
-            if(i == p - 1) d[i] = new Developer(i);
-            else d[i] = new Developer(i);
+            if(i == p - 1) d[i] = new Developer(i, k);
+            else d[i] = new Developer(i, 0);
         }
         
         d[p - 1].infection();
@@ -36,12 +38,21 @@ public class Main {
             int time = sc.nextInt();
             timeX[time] = sc.nextInt();
             timeY[time] = sc.nextInt();
+            //System.out.println(time + " " + timeX[time] + " " + timeY[time]);
         }
 
         for (int i = 0; i < timeX.length; i ++) {
-            if(timeX[i] != 0 && timeY[i] != 0 && k -- > 0) {
-                if(timeX[i] == p) d[timeY[i] - 1].infection();
-                if(timeY[i] == p) d[timeX[i] - 1].infection();
+            if(timeX[i] != 0 && timeY[i] != 0) {
+                if(d[timeX[i] - 1].infect) {
+                    d[timeY[i] - 1].infection();
+                    d[p - 1].leftInfections --;
+                }
+                if(d[timeY[i] - 1].infect) {
+                    d[timeX[i] - 1].infection();
+                    d[p - 1].leftInfections --;
+                }
+
+                if(d[p - 1].leftInfections == 0) break;
             }
         }
 
