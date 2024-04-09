@@ -54,7 +54,7 @@ public class Main {
                 break;
             }
         }
-
+        System.out.println(arr1[6268] + " " + arr2[6268]);
         if(check) System.out.println(-1);
     }
 }
