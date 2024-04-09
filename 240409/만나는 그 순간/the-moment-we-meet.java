@@ -15,17 +15,15 @@ public class Main {
             
             if(dir.equals("R")) {
                 for(int j = 0; j < t; j ++){
-                    arr1[current1] = stack1;
+                    arr1[current1] = stack1 ++;
                     current1 += 1;
-                    stack1 += 1;
                 }
             }
 
             if(dir.equals("L")) {
                 for(int j = 0; j < t; j ++){
-                    arr1[current1] = stack1;
+                    arr1[current1] = stack1 ++;
                     current1 -= 1;
-                    stack1 += 1;
                 }
             }
         }
@@ -36,17 +34,15 @@ public class Main {
             
             if(dir.equals("R")) {
                 for(int j = 0; j < t; j ++){
-                    arr2[current2] = stack2;
+                    arr2[current2] = stack2 ++;
                     current2 += 1;
-                    stack2 += 1;
                 }
             }
 
             if(dir.equals("L")) {
                 for(int j = 0; j < t; j ++){
-                    arr2[current2] = stack2;
+                    arr2[current2] = stack2 ++;
                     current2 -= 1;
-                    stack2 += 1;
                 }
             }
         }
