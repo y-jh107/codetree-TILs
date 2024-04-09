@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), m = sc.nextInt();
-        int[] arr1 = new int[50000];
-        int[] arr2 = new int[50000];
-        int current1 = 20000, current2 = 20000, stack1 = 0, stack2 = 0;
+        int[] arr1 = new int[1000000];
+        int[] arr2 = new int[1000000];
+        int current1 = 1, current2 = 1;
         boolean check = true;
 
         for(int i = 0; i < n; i ++) {
@@ -15,15 +15,15 @@ public class Main {
             
             if(dir.equals("R")) {
                 for(int j = 0; j < t; j ++){
-                    arr1[current1] = stack1 ++;
-                    current1 += 1;
+                    arr1[current1] = arr1[current1 - 1] + 1;
+                    current1 ++;
                 }
             }
 
-            if(dir.equals("L")) {
+            else if(dir.equals("L")) {
                 for(int j = 0; j < t; j ++){
-                    arr1[current1] = stack1 ++;
-                    current1 -= 1;
+                    arr1[current1] = arr1[current1 - 1] - 1;
+                    current1 ++;
                 }
             }
         }
@@ -34,26 +34,27 @@ public class Main {
             
             if(dir.equals("R")) {
                 for(int j = 0; j < t; j ++){
-                    arr2[current2] = stack2 ++;
-                    current2 += 1;
+                    arr2[current2] = arr2[current2 - 1] + 1;
+                    current2 ++;
                 }
             }
 
-            if(dir.equals("L")) {
+            else if(dir.equals("L")) {
                 for(int j = 0; j < t; j ++){
-                    arr2[current2] = stack2 ++;
-                    current2 -= 1;
+                    arr2[current2] = arr2[current2 - 1] - 1;
+                    current2 ++;
                 }
             }
         }
 
         for(int i = 0; i < arr1.length; i ++) {
             if(arr1[i] != 0 && arr2[i] == arr1[i]) {
-                System.out.println(arr1[i]);
+                System.out.println(i);
                 check = false;
                 break;
             }
         }
+
         //System.out.println(arr1[6268] + " " + arr2[6268]);
         if(check) System.out.println(-1);
     }
