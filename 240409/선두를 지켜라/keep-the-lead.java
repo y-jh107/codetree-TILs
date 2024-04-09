@@ -27,20 +27,18 @@ public class Main {
         }
 
         int cnt = 0;
-        int curr = 0;
-        int[] diff = new int[MAX_NUM * 1000];
-        for(int i = 0; i < diff.length; i ++) {
-            diff[i] = A_point[i] - B_point[i];
-            if(diff[i] < 0) {
-                if(-1 * curr < 0)
-                    cnt ++;
+        int winner = 'C';
+
+        for(int i = 0; i < indexA; i ++) {
+            if(A_point[i] > B_point[i]) {
+                if(winner == 'B') cnt ++;
+                winner = 'A';
             }
-            else if(diff[i] > 0) {
-                if(1 * curr < 0) 
-                    cnt ++;
+
+            else if(B_point[i] > A_point[i]) {
+                if(winner == 'A') cnt ++;
+                winner = 'B';
             }
-            if(diff[i] != 0)
-                curr = diff[i];
         }
 
         System.out.println(cnt);
