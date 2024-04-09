@@ -6,7 +6,7 @@ public class Main {
         int n = sc.nextInt(), m = sc.nextInt();
         int[] arr1 = new int[50000];
         int[] arr2 = new int[50000];
-        int current1 = 5000, current2 = 5000, stack1 = 0, stack2 = 0;
+        int current1 = 1000, current2 = 1000, stack1 = 0, stack2 = 0;
         boolean check = true;
 
         for(int i = 0; i < n; i ++) {
