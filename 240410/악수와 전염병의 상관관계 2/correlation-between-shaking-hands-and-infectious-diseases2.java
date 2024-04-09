@@ -35,14 +35,22 @@ public class Main {
 
         while (t -- > 0) {
             int time = sc.nextInt();
-            timeX[time] = sc.nextInt();
-            timeY[time] = sc.nextInt();
+            int devX = sc.nextInt();
+            int devY = sc.nextInt();
+            timeX[time] = devX;
+            timeY[time] = devY;
         }
 
         for (int i = 0; i < timeX.length; i ++) {
             if(timeX[i] != 0 && timeY[i] != 0) {
                 if(d[timeX[i] - 1].infect && d[timeX[i] - 1].countInfections > 0) {
+                    //System.out.println(i + " " + timeX[i] + " " + d[timeX[i] - 1].countInfections);
                     d[timeY[i] - 1].infection();
+                    d[timeX[i] - 1].countInfections --;
+                }
+                if(d[timeY[i] - 1].infect && d[timeY[i] - 1].countInfections > 0) {
+                    //System.out.println(i + " " + timeY[i] + " " + d[timeY[i] - 1].countInfections);
+                    d[timeX[i] - 1].infection();
                     d[timeY[i] - 1].countInfections --;
                 }
             }
