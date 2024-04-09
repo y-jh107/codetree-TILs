@@ -44,11 +44,13 @@ public class Main {
         for (int i = 0; i < timeX.length; i ++) {
             if(timeX[i] != 0 && timeY[i] != 0) {
                 if(d[timeX[i] - 1].infect && d[timeX[i] - 1].countInfections > 0) {
+                    if(d[timeY[i] - 1].infect) d[timeY[i] - 1].countInfections --;
                     d[timeY[i] - 1].infection();
                     d[timeX[i] - 1].countInfections --;
                     continue;
                 }
                 if(d[timeY[i] - 1].infect && d[timeY[i] - 1].countInfections > 0) {
+                    if(d[timeX[i] - 1].infect) d[timeX[i] - 1].countInfections --;
                     d[timeX[i] - 1].infection();
                     d[timeY[i] - 1].countInfections --;
                     continue;
