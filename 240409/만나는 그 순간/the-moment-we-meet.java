@@ -7,6 +7,7 @@ public class Main {
         int[] arr1 = new int[2001];
         int[] arr2 = new int[2001];
         int current1 = 1000, current2 = 1000, stack1 = 0, stack2 = 0;
+        boolean check = true;
 
         for(int i = 0; i < n; i ++) {
             String dir = sc.next();
@@ -53,8 +54,11 @@ public class Main {
         for(int i = 0; i < arr1.length; i ++) {
             if(arr1[i] != 0 && arr2[i] == arr1[i]) {
                 System.out.println(arr1[i]);
+                check = false;
                 break;
             }
         }
+
+        if(check) System.out.println(-1);
     }
 }
