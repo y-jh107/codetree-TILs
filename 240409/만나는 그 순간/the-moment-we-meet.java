@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), m = sc.nextInt();
-        int[] arr1 = new int[2001];
-        int[] arr2 = new int[2001];
-        int current1 = 1000, current2 = 1000, stack1 = 0, stack2 = 0;
+        int[] arr1 = new int[20001];
+        int[] arr2 = new int[20001];
+        int current1 = 10000, current2 = 10000, stack1 = 0, stack2 = 0;
         boolean check = true;
 
         for(int i = 0; i < n; i ++) {
