@@ -27,9 +27,20 @@ public class Main {
         }
 
         int cnt = 0;
-        for(int i = 1; i < MAX_NUM; i ++) {
-            if(A_point[i] < B_point[i] && A_point[i - 1] > B_point[i - 1]) cnt ++;
-            else if(A_point[i] > B_point[i] && A_point[i - 1] < B_point[i - 1]) cnt ++;
+        int curr = 0;
+        int[] diff = new int[MAX_NUM * 1000];
+        for(int i = 0; i < diff.length; i ++) {
+            diff[i] = A_point[i] - B_point[i];
+            if(diff[i] < 0) {
+                if(-1 * curr < 0)
+                    cnt ++;
+            }
+            else if(diff[i] > 0) {
+                if(1 * curr < 0) 
+                    cnt ++;
+            }
+            if(diff[i] != 0)
+                curr = diff[i];
         }
 
         System.out.println(cnt);
