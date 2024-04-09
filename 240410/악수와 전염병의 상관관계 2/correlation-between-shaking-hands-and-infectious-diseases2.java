@@ -41,16 +41,15 @@ public class Main {
 
         for (int i = 0; i < timeX.length; i ++) {
             if(timeX[i] != 0 && timeY[i] != 0) {
-                if(d[timeX[i] - 1].infect) {
+                if(d[timeX[i] - 1].infect && d[timeX[i] - 1].countInfections > 0) {
                     d[timeY[i] - 1].infection();
                     //System.out.println(d[timeY[i]].infect);
-                    k --;
+                    d[timeY[i] - 1].countInfections --;
                 }
-                if(d[timeY[i] - 1].infect) {
+                if(d[timeY[i] - 1].infect && d[timeY[i] - 1].countInfections > 0) {
                     d[timeX[i] - 1].infection();
+                    d[timeX[i] - 1].countInfections --;
                 }
-
-                if(k == 0) break;
             }
         }
 
