@@ -28,8 +28,8 @@ public class Main {
 
         int cnt = 0;
         for(int i = 1; i < MAX_NUM; i ++) {
-            if(A_point[i] < B_point[i] && A_point[i - 1] > B_point[i - 1]) cnt ++;
-            if(A_point[i] > B_point[i] && A_point[i - 1] < B_point[i - 1]) cnt ++;
+            if(A_point[i] < B_point[i] && A_point[i - 1] >= B_point[i - 1]) cnt ++;
+            if(A_point[i] > B_point[i] && A_point[i - 1] <= B_point[i - 1]) cnt ++;
         }
 
         System.out.println(cnt);
