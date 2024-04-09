@@ -14,17 +14,10 @@ public class Main {
             if(i == 0 || arr[i] == arr[i - 1]) {
                 //System.out.println(cnt);
                 cnt ++;
-                if(i == n - 1) {
-                    maxCnt = cnt;
-                    break;
-                }
+                if(cnt > maxCnt) maxCnt = cnt;
             }
 
-            if(i > 0 && i < n - 1 && arr[i - 1] != arr[i]) {
-                //System.out.println(cnt);
-                maxCnt = cnt;
-                cnt = 0;
-            }
+            else  cnt = 1;
         }
 
         System.out.println(maxCnt);
