@@ -8,8 +8,8 @@ public class Main {
         int timePassed = 1;
         n = sc.nextInt();
         m = sc.nextInt();
-        int[] aMove = new int[1001], bMove = new int[1001];
-        String[] winner = new String[1001];
+        int[] aMove = new int[1000001], bMove = new int[1000001];
+        String[] winner = new String[1000001];
 
         for (int i = 0; i < n; i ++) {
             int v = sc.nextInt(), t = sc.nextInt();
