@@ -27,17 +27,17 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < winner.length; i ++) {
+        winner[0] = "0";
+        for (int i = 1; i < winner.length; i ++) {
             if(aMove[i] > bMove[i]) winner[i] = "a";
-            else winner[i] = "b";
+            else if(bMove[i] > aMove[i]) winner[i] = "b";
+            else winner[i] = winner[i - 1];
         }
 
         int newWins = 0;
-        String win = "c";
-        for (int i = 0; i < winner.length; i ++) {
-            if (winner[i].equals(win)) continue;
-            win = winner[i];
-            newWins ++;
+        for (int i = 2; i < winner.length; i ++) {
+            if (winner[i] != winner[i - 1])
+                newWins ++;
         }
 
         System.out.println(newWins);
