@@ -13,7 +13,7 @@ public class Main {
             char dir = order.charAt(i);
 
             if(dir == 'L') {
-                dirNum = (dirNum - 1) % 4;
+                dirNum = (dirNum + 3) % 4;
             } else if(dir == 'R') {
                 dirNum = (dirNum + 1) % 4;
             } else if(dir == 'F') {
