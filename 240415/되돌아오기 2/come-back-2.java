@@ -8,6 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int sec = 0, x = 0, y = 0;
         int dirNum = 3;
+        boolean isTrue = false;
         String str = sc.next();
 
         for(int i = 0; i < str.length(); i ++) {
@@ -29,9 +30,12 @@ public class Main {
 
             sec ++;
             if(x == 0 && y == 0) {
+                isTrue = true;
                 System.out.println(sec);
                 break;
             }
         }
+
+        if(!isTrue) System.out.println(-1);
     } 
 }
