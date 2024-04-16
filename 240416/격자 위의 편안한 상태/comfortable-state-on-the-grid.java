@@ -22,7 +22,7 @@ public class Main {
             if(c - 1 >= 0 && colored[r][c - 1] == 1) colors ++;
             if(c + 1 < n && colored[r][c + 1] == 1) colors ++;
 
-            if(colors >= 3) System.out.println(1);
+            if(colors == 3) System.out.println(1);
             else System.out.println(0);
         }
     }
