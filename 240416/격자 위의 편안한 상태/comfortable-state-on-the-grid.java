@@ -16,12 +16,11 @@ public class Main {
         while (m -- > 0) {
             int r = sc.nextInt() - 1, c = sc.nextInt() - 1, colors = 0;
             colored[r][c] = 1;
-            if(inRange(r, c)) {
-                if(colored[r - 1][c] == 1) colors ++;
-                if(colored[r + 1][c] == 1) colors ++;
-                if(colored[r][c - 1] == 1) colors ++;
-                if(colored[r][c + 1] == 1) colors ++;
-            }
+
+            if(r - 1 >= 0 && colored[r - 1][c] == 1) colors ++;
+            if(r + 1 <= n && colored[r + 1][c] == 1) colors ++;
+            if(c - 1 >= 0 && colored[r][c - 1] == 1) colors ++;
+            if(c + 1 <= n && colored[r][c + 1] == 1) colors ++;
 
             if(colors >= 3) System.out.println(1);
             else System.out.println(0);
