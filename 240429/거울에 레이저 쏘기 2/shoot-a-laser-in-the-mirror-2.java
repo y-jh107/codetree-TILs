@@ -23,11 +23,11 @@ public class Main {
         if(dir == 0)
             return 3;
         else if(dir == 1)
-            return 0;
+            return 2;
         else if(dir == 2)
             return 1;
         else
-            return 2;
+            return 0;
     }
     public static boolean check(int i, int j) {
         return(i >= 0 && i < n && j >= 0 && j < n);
