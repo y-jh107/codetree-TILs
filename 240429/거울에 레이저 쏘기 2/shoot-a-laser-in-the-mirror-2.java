@@ -7,16 +7,16 @@ public class Main {
 
     public static int decision1(int dir) {
         if (dir == 0) {
-            return 1;
-        }
-        else if(dir == 1) {
-            return 2;
-        }
-        else if(dir == 2) {
             return 3;
         }
-        else
+        else if(dir == 1) {
             return 0;
+        }
+        else if(dir == 2) {
+            return 1;
+        }
+        else
+            return 2;
     }   
 
     public static int decision2(int dir) {
