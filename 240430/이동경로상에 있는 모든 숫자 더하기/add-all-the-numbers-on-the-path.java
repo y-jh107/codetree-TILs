@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static boolean isTrue(int x, int y) {
-        return (x > 0 && x < n && y > 0 && y < n);
+        return (x >= 0 && x < n && y >= 0 && y < n);
     }
 
     public static void main(String[] args) {
@@ -45,8 +45,8 @@ public class Main {
                 //boolean check = isTrue(nx, ny);
                 if(isTrue(nx, ny)) {
                     sum += arr[nx][ny];
-                    x += dx[dir_num];
-                    y += dy[dir_num];
+                    x = nx;
+                    y = ny;
                 }
                 else continue;
             }
