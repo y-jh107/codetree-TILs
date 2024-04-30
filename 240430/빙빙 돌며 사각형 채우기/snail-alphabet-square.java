@@ -34,6 +34,7 @@ public class Main {
             j += dy[dir];
 
             arr[i][j] = cnt ++;
+            if(cnt > 'Z') cnt = 'A';
             num ++;
         }
 
