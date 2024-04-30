@@ -14,7 +14,7 @@ public class Main {
         arr[i][j] = cnt ++;
 
         while(true) {
-            
+            if(cnt > n * m) break;
             
             //System.out.println(i + " " + j);
             if(i == n - 1 && j == 0 && dir == 0) dir = 1;
@@ -33,9 +33,6 @@ public class Main {
             j += dy[dir];
 
             arr[i][j] = cnt ++;
-            //System.out.println(i + " " + j + " " + dir);
-
-            if(cnt > n * m) break;
         }
 
         for(i = 0; i < n; i ++) {
