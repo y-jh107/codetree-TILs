@@ -18,9 +18,9 @@ public class Main {
             if(num == n * m) break;
 
             //System.out.println(i + " " + j );
-            if(i == n - 1 && j == 0) dir = 3;
-            else if(i == n - 1 && j == m - 1) dir = 2;
-            else if(i == 0 && j == m - 1) dir = 1;
+            if(i == n - 1 && j == 0 && dir == 2) dir = 3;
+            else if(i == n - 1 && j == m - 1 && dir == 1) dir = 2;
+            else if(i == 0 && j == m - 1 && dir == 0) dir = 1;
 
                       
 
