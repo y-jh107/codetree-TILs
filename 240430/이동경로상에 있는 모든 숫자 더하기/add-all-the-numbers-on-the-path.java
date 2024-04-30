@@ -48,6 +48,7 @@ public class Main {
                     x += dx[dir_num];
                     y += dy[dir_num];
                 }
+                else continue;
             }
         }
 
