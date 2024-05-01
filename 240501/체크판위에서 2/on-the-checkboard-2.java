@@ -7,38 +7,27 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         r = sc.nextInt();
         c = sc.nextInt();
-        String[][] arr = new String[r][c];
+        char[][] arr = new char[r][c];
         int cnt = 0, x = 0, y = 0;
 
         for(int i = 0; i < r; i ++) {
             for(int j = 0; j < c; j ++) {
-                arr[i][j] = sc.next();
+                arr[i][j] = sc.next().charAt(0);
             }
         }
 
-        while(true) {
-            if(x == r - 1 && y < c - 1) {
-                cnt = 0;
-                break;
-            }
-            else if(x < r - 1 && y == c - 1) {
-                cnt = 0;
-                break;
-            }
-            String current = arr[x][y];
-
-            for(int i = x + 1; i < r; i ++) {
-                for(int j = y + 1; j < c; j ++) {
-                    if(!(arr[i][j].equals(current))) {
-                        x = i;
-                        y = j;
-                        cnt ++;
-                        break;
+        for(int i = 1; i < r - 1; i ++) {
+            for(int j = i + 1; j < r - 1; j ++) {
+                for(int k = 1; k < c - 1; k ++) {
+                    for(int l = k + 1; l < c - 1; l ++) {
+                        if(arr[x][y] != arr[i][k] && arr[i][k] != arr[j][l] && arr[j][l] != arr[r - 1][c - 1]) {
+                            //System.out.println(i + " " + k + ", " + j + " " + l);
+                            //System.out.println();
+                            cnt ++;
+                        }
                     }
                 }
             }
-
-            if(x == r - 1 && y == c - 1) break;
         }
 
         System.out.println(cnt);
