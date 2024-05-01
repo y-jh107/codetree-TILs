@@ -17,6 +17,14 @@ public class Main {
         }
 
         while(true) {
+            if(x == r - 1 && y < c - 1) {
+                cnt = 0;
+                break;
+            }
+            else if(x < r - 1 && y == c - 1) {
+                cnt = 0;
+                break;
+            }
             String current = arr[x][y];
 
             for(int i = x + 1; i < r; i ++) {
