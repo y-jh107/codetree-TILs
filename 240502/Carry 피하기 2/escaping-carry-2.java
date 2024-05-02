@@ -48,7 +48,7 @@ public class Main {
                 }
             }
         }
-
+        if(maxValue == 0) maxValue = -1;
         System.out.println(maxValue);
     }
 }
