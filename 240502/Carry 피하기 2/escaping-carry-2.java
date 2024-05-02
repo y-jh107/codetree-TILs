@@ -32,7 +32,7 @@ public class Main {
                     int[] num3 = makeArray(arr[k]);
 
                     for(int l = 0; l < 5; l ++) {
-                        if(num1[l] + num2[l] + num3[l] > 10) {
+                        if(num1[l] + num2[l] + num3[l] >= 10) {
                             isTrue = false;
                             break;
                         }
@@ -41,12 +41,14 @@ public class Main {
 
                     if(isTrue) {
                         int sum = arr[i] + arr[j] + arr[k];
+                        //System.out.println(arr[i] + " " + arr[j] + " " + arr[k]);
                         maxValue = Math.max(maxValue, sum);
+                        //System.out.println(maxValue);
                     }
                 }
             }
         }
-        
+
         System.out.println(maxValue);
     }
 }
