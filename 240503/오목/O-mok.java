@@ -45,6 +45,23 @@ public class Main {
                         winY = j + 3;
                         break;
                     }
+
+                    int add = 1;
+                    while(add < 5) {
+                        if(omok[i + add][j + add] != omok[i][j]) {
+                            checkWin = false;
+                            break;
+                        }
+                        add ++;
+                        checkWin = true;
+                    }
+
+                    if(checkWin) {
+                        winner = omok[i][j];
+                        winX = i + 3;
+                        winY = j + 3;
+                        break;
+                    }
                 }
             }
         }
