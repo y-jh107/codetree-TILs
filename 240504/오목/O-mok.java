@@ -18,6 +18,10 @@ public class Main {
             for(int j = 0; j < 19; j ++) {
                 if(omok[i][j] != 0) {
                     for(int k = i + 1; k < i + 5; k ++) {
+                        if(k > 19) {
+                            checkWin = false;
+                            break;
+                        }
                         if(omok[k][j] != omok[i][j]) {
                             checkWin = false;
                             break;
@@ -33,6 +37,10 @@ public class Main {
                     }
 
                     for(int k = j + 1; k < j + 5; k ++) {
+                        if(k > 19) {
+                            checkWin = false;
+                            break;
+                        }
                         if(omok[i][k] != omok[i][j]) {
                             checkWin = false;
                             break;
@@ -48,6 +56,10 @@ public class Main {
 
                     int add = 1;
                     while(add < 5) {
+                        if(i + add < 0 && j + add < 0) {
+                            checkWin = false;
+                            break;
+                        }
                         if(omok[i + add][j + add] != omok[i][j]) {
                             checkWin = false;
                             break;
@@ -69,7 +81,7 @@ public class Main {
                             checkWin = false;
                             break;
                         }
-                        if(i - add < 0 && j - add < 0) {
+                        if(i + add < 0 && j - add < 0) {
                             checkWin = false;
                             break;
                         }
