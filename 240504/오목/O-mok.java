@@ -56,7 +56,7 @@ public class Main {
 
                     int add = 1;
                     while(add < 5) {
-                        if(i + add == 19 && j + add == 19) {
+                        if(i + add == 19 || j + add == 19) {
                             checkWin = false;
                             break;
                         }
@@ -77,14 +77,16 @@ public class Main {
 
                     add = 1;
                     while(add < 5) {
+                        if(i + add == 19 || j - add < 0) {
+                            checkWin = false;
+                            break;
+                        }
+                        
                         if(omok[i + add][j - add] != omok[i][j]) {
                             checkWin = false;
                             break;
                         }
-                        if(i + add == 19 && j - add < 0) {
-                            checkWin = false;
-                            break;
-                        }
+                        
                         add ++;
                         checkWin = true;
                     }
@@ -100,6 +102,6 @@ public class Main {
         }
 
         System.out.println(winner);
-        System.out.println(winX + " " + winY);
+        if(winner != 0) System.out.println(winX + " " + winY);
     }
 }
