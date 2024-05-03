@@ -56,7 +56,7 @@ public class Main {
 
                     int add = 1;
                     while(add < 5) {
-                        if(i + add < 0 && j + add < 0) {
+                        if(i + add == 19 && j + add == 19) {
                             checkWin = false;
                             break;
                         }
@@ -81,7 +81,7 @@ public class Main {
                             checkWin = false;
                             break;
                         }
-                        if(i + add < 0 && j - add < 0) {
+                        if(i + add == 19 && j - add < 0) {
                             checkWin = false;
                             break;
                         }
