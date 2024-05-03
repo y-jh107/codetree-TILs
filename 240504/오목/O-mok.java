@@ -59,7 +59,7 @@ public class Main {
                     if(checkWin) {
                         winner = omok[i][j];
                         winX = i + 3;
-                        winY = j + 2;
+                        winY = j + 3;
                         break;
                     }
 
