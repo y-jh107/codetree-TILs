@@ -18,7 +18,7 @@ public class Main {
             for(int j = 0; j < 19; j ++) {
                 if(omok[i][j] != 0) {
                     for(int k = i + 1; k < i + 5; k ++) {
-                        if(k > 19) {
+                        if(k == 19) {
                             checkWin = false;
                             break;
                         }
@@ -37,7 +37,7 @@ public class Main {
                     }
 
                     for(int k = j + 1; k < j + 5; k ++) {
-                        if(k > 19) {
+                        if(k == 19) {
                             checkWin = false;
                             break;
                         }
