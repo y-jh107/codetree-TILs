@@ -14,15 +14,22 @@ public class Main {
         for(int i = 0; i < m; i ++) {
             beauty[i] = sc.nextInt();
         }
+        Arrays.sort(beauty);
 
         for(int i = 0; i <= n - m; i ++) {
             int cntNum = 0;
-            for(int j = i; j < i + m; j ++) {
-                int isIn = arr[j];
-                for(int k = 0; k < m; k ++) {
-                    if(isIn == beauty[k]) cntNum ++;
-                }
+            int[] inside = new int[m];
+
+            for(int j = 0; j < m; j ++) {
+                inside[j] = arr[i + j];
             }
+
+            Arrays.sort(inside);
+
+            for(int j = 0; j < m; j ++) {
+                if(inside[j] == beauty[j]) cntNum ++;
+            }
+            
             if(cntNum == m) cnt ++;
         }
 
