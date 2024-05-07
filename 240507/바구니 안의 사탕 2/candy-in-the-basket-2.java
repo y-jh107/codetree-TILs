@@ -5,7 +5,7 @@ public class Main {
     public static final int MAX_N = 100;
 
     public static boolean inRange(int x) {
-        return (x - k >= 0 && x + k < MAX_N);
+        return (x - k >= 0);
     }
 
     public static void main(String[] args) {
@@ -18,14 +18,15 @@ public class Main {
         //System.out.println(n + " "+ k);
         for(int i = 0; i < n; i ++) {
             int candies = sc.nextInt(), idx = sc.nextInt();
-            //System.out.println(idx + " " + candies);
+            //System.out.println(candies + " " + idx);
             candy[idx] += candies;
         }
 
-        for(int i = 0; i < MAX_N; i ++) {
+        for(int i = 0; i <= MAX_N; i ++) {
             int sum = 0;
             if(inRange(i)) {
-                for(int j = i - k; j <= i + k; j ++) {
+                //System.out.println(i + " " + i + k);
+                for(int j = i - k; j <= MAX_N; j ++) {
                     //System.out.println(j + " " + candy[j]);
                     sum += candy[j];
                 }
