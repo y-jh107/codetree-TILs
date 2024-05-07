@@ -16,7 +16,7 @@ public class Main {
             height[i] = sc.nextInt();
         }
 
-        for(int i = 0; i < n; i ++) {
+        for(int i = 0; i <= n - t; i ++) {
             int cnt = 0;
 
             for(int j = i; j < i + t; j ++) {
