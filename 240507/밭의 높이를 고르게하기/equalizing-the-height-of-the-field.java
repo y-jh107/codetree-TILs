@@ -6,23 +6,7 @@ public class Main {
     public static int n, t, h;
 
     public static int set(int x) {
-        int curr = x, cnt = 0;
-
-        if(x > h) {
-            while(curr != h) {
-                curr --;
-                cnt ++;
-            }
-        }
-        else if(x < h) {
-            while(curr != h) {
-                curr ++;
-                cnt ++;
-            }
-        }
-        else cnt = 0;
-        
-        return cnt;
+        return Math.abs(x - h);
     }
 
     public static void main(String[] args) {
