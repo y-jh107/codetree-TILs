@@ -15,6 +15,8 @@ public class Main {
             line[idx] = sc.next().charAt(0);
         }
 
+        Arrays.sort(pos, 0, n);
+
         for(int i = 0; i < n; i ++) {
             int countG = 0, countH = 0;
 
@@ -25,14 +27,19 @@ public class Main {
                 if(line[pos[j]] == 'G') countG ++;
                 else if(line[pos[j]] == 'H') countH ++;
 
-                if(countH == countG || (countG != 0 && countH == 0) || (countH != 0 && countG == 0)) {
-                    //System.out.println(pos[j] + " " + pos[i]);
+                if(countH == countG) {
+                    maxSize = Math.max(maxSize, pos[j] - pos[i]);
+                }      
+                else if(countG != 0 && countH == 0) {
                     maxSize = Math.max(maxSize, pos[j] - pos[i]);
                 }
-                        
+                else if(countH != 0 && countG == 0) {
+                    maxSize = Math.max(maxSize, pos[j] - pos[i]);
+                }
             }
         }
 
+        if(n == 1) maxSize = 0;
         System.out.println(maxSize);
     }
 }
