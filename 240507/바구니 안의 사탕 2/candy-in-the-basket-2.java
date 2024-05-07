@@ -4,10 +4,6 @@ public class Main {
     public static int n, k;
     public static final int MAX_N = 100;
 
-    public static boolean inRange(int x) {
-        return (x - k >= 0);
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
@@ -24,23 +20,32 @@ public class Main {
 
         for(int i = 0; i <= MAX_N; i ++) {
             int sum = 0;
-            if(inRange(i)) {
-                //System.out.println(i + " " + i + k);
-                if(i + k < MAX_N) {
-                    for(int j = i - k; j <= i + k; j ++) {
-                        //System.out.println(j + " " + candy[j]);
-                        sum += candy[j];
-                    }
+            //System.out.println(i + " " + i + k);
+            if(i + k < MAX_N && i - k >= 0) {
+                for(int j = i - k; j <= i + k; j ++) {
+                    //System.out.println(j + " " + candy[j]); 
+                    sum += candy[j];
                 }
-                else {
-                    for(int j = i - k; j <= MAX_N; j ++) {
-                        //System.out.println(j + " " + candy[j]);
-                        sum += candy[j];
-                    }
-                }
-                
             }
-
+            else if(i - k < 0 && i + k < MAX_N) {
+                for(int j = 0; j <= i + k; j ++) {
+                    //System.out.println(j + " " + candy[j]);
+                    sum += candy[j];
+                }
+            }
+            else if(i - k >= 0 && i + k >= MAX_N) {
+                for(int j = i - k; j <= MAX_N; j ++) {
+                    //System.out.println(j + " " + candy[j]);
+                    sum += candy[j];
+                }
+            }
+            else {
+                for(int j = 0; j <= MAX_N; j ++) {
+                    //System.out.println(j + " " + candy[j]);
+                    sum += candy[j];
+                }
+            }               
+            
             maxValue = Math.max(maxValue, sum);
         }
 
