@@ -26,10 +26,19 @@ public class Main {
             int sum = 0;
             if(inRange(i)) {
                 //System.out.println(i + " " + i + k);
-                for(int j = i - k; j <= MAX_N; j ++) {
-                    //System.out.println(j + " " + candy[j]);
-                    sum += candy[j];
+                if(i + k < MAX_N) {
+                    for(int j = i - k; j <= i + k; j ++) {
+                        //System.out.println(j + " " + candy[j]);
+                        sum += candy[j];
+                    }
                 }
+                else {
+                    for(int j = i - k; j <= MAX_N; j ++) {
+                        //System.out.println(j + " " + candy[j]);
+                        sum += candy[j];
+                    }
+                }
+                
             }
 
             maxValue = Math.max(maxValue, sum);
