@@ -25,9 +25,9 @@ public class Main {
                 if(line[pos[j]] == 'G') countG ++;
                 else if(line[pos[j]] == 'H') countH ++;
 
-                if(countH == countG) {
+                if(countH == countG || (countG != 0 && countH == 0) || (countH != 0 && countG == 0)) {
                     //System.out.println(pos[j] + " " + pos[i]);
-                    maxSize = Math.max(maxSize, pos[j] - pos[i] + 1);
+                    maxSize = Math.max(maxSize, pos[j] - pos[i]);
                 }
                         
             }
