@@ -20,6 +20,7 @@ public class Main {
                 cnt ++;
             }
         }
+        else cnt = 0;
         
         return cnt;
     }
@@ -38,17 +39,19 @@ public class Main {
         }
 
         for(int i = 0; i < n; i ++) {
-            //System.out.println(height[i] + " " + i);
             setting[i] = set(height[i]);
-            //System.out.println(setting[i]);
+            //System.out.print(setting[i] + " ");
         }
 
         for(int i = 0; i < n; i ++) {
             int cnt = 0;
 
             for(int j = i; j < i + t; j ++) {
+                //System.out.print(setting[j] + " cnt: ");
                 cnt += setting[j];
+                //System.out.print(cnt + " ");
             }
+            //System.out.println();
 
             minValue = Math.min(minValue, cnt);
         }
