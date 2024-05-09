@@ -29,7 +29,7 @@ public class Main {
                         cnt ++;
                     }
                     else if(getDiff(i, a2) <= 2 && getDiff(j, b2) <= 2 && getDiff(k, c2) <= 2) {
-                        System.out.println(i + " " + j + " " + k);
+                        //System.out.println(i + " " + j + " " + k);
                         cnt ++;
                     }
                 }
