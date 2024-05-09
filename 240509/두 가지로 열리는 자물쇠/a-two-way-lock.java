@@ -7,8 +7,15 @@ public class Main {
         if(a == n && b <= 2) {
             a = 0;
         }
-        else if(a == n - 1 && b < 2) {
+        else if(b == n && a <= 2) {
+            b = 0;
+        }
+
+        if(a == n - 1 && b < 2) {
             a = -1;
+        }
+        else if(b == n - 1 && a < 2) {
+            b = -1;
         }
 
         return Math.abs(a - b);
