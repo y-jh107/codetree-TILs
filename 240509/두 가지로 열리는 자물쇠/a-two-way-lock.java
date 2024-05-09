@@ -7,7 +7,7 @@ public class Main {
         if(a == n && b <= 2) {
             a = 0;
         }
-        else if(a == n - 1 && b <= 2) {
+        else if(a == n - 1 && b < 2) {
             a = -1;
         }
 
@@ -29,7 +29,7 @@ public class Main {
                         cnt ++;
                     }
                     else if(getDiff(i, a2) <= 2 && getDiff(j, b2) <= 2 && getDiff(k, c2) <= 2) {
-                        //System.out.println(i + " " + j + " " + k);
+                        System.out.println(i + " " + j + " " + k);
                         cnt ++;
                     }
                 }
