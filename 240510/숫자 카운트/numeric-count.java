@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static int[] possible = new int[1000];
+    public static int[] possible = new int[1001];
 
     public static boolean check(int num[]) {
         if(num[0] == num[1] || num[0] == num[2] || num[1] == num[2])
@@ -13,7 +13,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), cnt = 0, index = 0;
         int[] ans = new int[3];
-        int[] nums = new int[1000];
+        int[] nums = new int[1001];
 
         for(int i = 0; i < n; i ++) {
             int num = sc.nextInt(), idx = 0, unit = 100;
