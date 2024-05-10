@@ -13,7 +13,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), cnt = 0, index = 0;
         int[] ans = new int[3];
-        int[] nums = new int[1001];
+        int[] nums = new int[10000];
 
         for(int i = 0; i < n; i ++) {
             int num = sc.nextInt(), idx = 0, unit = 100;
