@@ -16,9 +16,10 @@ public class Main {
 
         for(int i = 0; i < 3; i ++) {
             teams[i] += developers[i] + developers[5 - i];
+            //System.out.println(teams[i]);
         }
 
-        int findMax = teams[1], findMin = teams[2];
+        int findMax = teams[1], findMin = teams[0];
 
         minValue = Math.min(minValue, Math.abs(findMax - findMin));
 
