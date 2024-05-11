@@ -19,7 +19,11 @@ public class Main {
             //System.out.println(teams[i]);
         }
 
-        int findMax = teams[1], findMin = teams[0];
+        int findMax = 0, findMin = Integer.MAX_VALUE;
+        for(int i = 0; i < 3; i ++) {
+            if(findMax < teams[i]) findMax = teams[i];
+            if(findMin > teams[i]) findMin = teams[i];
+        }
 
         minValue = Math.min(minValue, Math.abs(findMax - findMin));
 
