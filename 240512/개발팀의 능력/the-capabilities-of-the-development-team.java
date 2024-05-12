@@ -5,6 +5,7 @@ public class Main {
     public static int MAX_N = 5;
 
     public static int n = MAX_N;
+    public static int correct = -1;
     public static int[] arr = new int[MAX_N];
 
     public static int diff(int i, int j, int k, int l) {
@@ -18,13 +19,20 @@ public class Main {
         int sum2 = arr[k] + arr[l];
         int sum3 = totalSum - sum1 - sum2;
 
-        if(sum1 == sum2 || sum1 == sum3 || sum2 == sum3) return totalSum;
+        if(sum1 != sum2 && sum1 != sum3 && sum2 != sum3) {
+            correct ++;
+            int minValue = MAX_INT, maxValue = 0;
+            minValue = Math.min(sum1, sum2);
+            minValue = Math.min(minValue, sum3);
+            maxValue = Math.max(sum1, sum2);
+            maxValue = Math.max(maxValue, sum3);
 
-        int ret = Math.abs(sum1 - sum2);
-        ret = Math.max(ret, Math.abs(sum1 - sum3));
-        ret = Math.max(ret, Math.abs(sum2 - sum3));
+            return maxValue - minValue;
+        }
 
-        return ret;
+        else {
+            return totalSum;
+        }
     }
 
     public static void main(String[] args) {
