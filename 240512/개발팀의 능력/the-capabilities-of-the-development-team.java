@@ -49,9 +49,11 @@ public class Main {
                     for(int l = k + 1; l < n; l++) {
                         if(k == i || k == j || l == i || l == j)
                             continue;
+                        
                         minDiff = Math.min(minDiff, diff(i, j, k, l));
                     }
 
-        System.out.print(minDiff);
+        if(correct == -1) System.out.println(correct);
+        else System.out.print(minDiff);
     }
 }
