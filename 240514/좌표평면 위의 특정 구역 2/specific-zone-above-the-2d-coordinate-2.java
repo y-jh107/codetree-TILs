@@ -21,9 +21,9 @@ public class Main {
             int idx = 0;
             
             for(int j = 0; j < N * N; j ++) {
-                square[j] = 1;
+                square[j] = 1600000000;
             }
-            
+
             for(int j = 0; j < N; j ++) {
                 if(i == j) continue;
 
@@ -46,7 +46,7 @@ public class Main {
             }
 
             for(int j = 0; j < N * N; j ++) {
-                ans = Math.min(ans, square[j]);
+                    ans = Math.min(ans, square[j]);
             }
         }
 
