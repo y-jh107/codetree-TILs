@@ -18,6 +18,7 @@ public class Main {
 
         for(int i = 0; i < N; i ++) {
             int[] square = new int[1600001];
+            int idx = 0;
 
             for(int j = 0; j < N; j ++) {
                 if(i == j) continue;
@@ -36,12 +37,12 @@ public class Main {
 
                 int s = length * width;
 
-                square[s] ++;
+                square[idx ++] = s;
             }
 
             for(int j = 0; j < 1600001; j ++) {
                 if(square[j] != 0) {
-                    ans = Math.min(ans, j);
+                    ans = Math.min(ans, square[j]);
                 }
             }
         }
