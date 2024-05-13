@@ -17,9 +17,13 @@ public class Main {
         }
 
         for(int i = 0; i < N; i ++) {
-            int[] square = new int[1600001];
+            int[] square = new int[N * N];
             int idx = 0;
-
+            
+            for(int j = 0; j < N * N; j ++) {
+                square[j] = 1;
+            }
+            
             for(int j = 0; j < N; j ++) {
                 if(i == j) continue;
 
@@ -33,6 +37,7 @@ public class Main {
                     maxY = Math.max(maxY, point[k][1]);
                 }
 
+
                 int length = Math.abs(maxX - minX), width = Math.abs(maxY - minY);
 
                 int s = length * width;
@@ -40,10 +45,8 @@ public class Main {
                 square[idx ++] = s;
             }
 
-            for(int j = 0; j < 1600001; j ++) {
-                if(square[j] != 0) {
-                    ans = Math.min(ans, square[j]);
-                }
+            for(int j = 0; j < N * N; j ++) {
+                ans = Math.min(ans, square[j]);
             }
         }
 
