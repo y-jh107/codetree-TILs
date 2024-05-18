@@ -14,6 +14,7 @@ public class Main {
             students[i] = sc.nextInt();
         }
 
+        Arrays.sort(students, 0, n);
         int maxStudents = 0;
         for(int i = 0; i < n; i ++) {
             int total = 0, presents = 0;
