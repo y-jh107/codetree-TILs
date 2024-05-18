@@ -14,27 +14,22 @@ public class Main {
             students[i] = sc.nextInt();
         }
 
-        Arrays.sort(students);
-
         int maxStudents = 0;
         for(int i = 0; i < n; i ++) {
             int total = 0, presents = 0;
 
             for(int j = 0; j < n; j ++) {
+                //System.out.println(total);
                 
                 if(j == i) total += students[j] / 2;
                 else total += students[j];
                 presents ++;
 
-                if(total >= budget) {
+                if(total > budget) {
                     presents --;
                     //System.out.println(i + " " + total + " " + presents);
                     break;
                 }
-
-
-                //System.out.println(total);
-                
             }
 
             //System.out.println();
