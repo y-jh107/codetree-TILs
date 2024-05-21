@@ -24,13 +24,14 @@ public class Main {
                     ans ++;
                 }
 
-                if(total > budget) {
+                if(total >= budget) {
                     ans --;
                     result = Math.max(result, ans);
                     break;
                 }
-
-                result = Math.max(result, ans);
+                else {
+                    result = Math.max(result, ans);
+                }
             }
         }
 
