@@ -26,13 +26,15 @@ public class Main {
                 if(i == j) {
                     total += students[j][0] / 2 + students[j][1];
                     ans ++;
+                    result = Math.max(result, ans);
                 }
                 else {
                     total += students[j][0] + students[j][1];
                     ans ++;
+                    result = Math.max(result, ans);
                 }
                 
-                result = Math.max(result, ans);
+                
 
                 //System.out.println(total);
             }
