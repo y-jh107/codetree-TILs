@@ -11,7 +11,7 @@ public class Main {
             students[i][1] = sc.nextInt();
         }
 
-        Arrays.sort(students, Comparator.comparingInt(a -> a[0] + a[1]));
+        //Arrays.sort(students, Comparator.comparingInt(a -> a[0] + a[1]));
 
         int result = 0;
         for(int i = 0; i < n; i ++) {
@@ -30,8 +30,8 @@ public class Main {
                 
                 if(total > budget) {
                     ans --;
-                    result = Math.max(result, ans);
-                    break;
+                    total -= students[j][0] + students[j][1];
+                    continue;
                 }
             }
             result = Math.max(result, ans);
