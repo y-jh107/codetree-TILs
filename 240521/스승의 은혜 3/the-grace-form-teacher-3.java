@@ -26,8 +26,9 @@ public class Main {
 
                 if(total > budget) {
                     ans --;
-                    result = Math.max(result, ans);
                 }
+
+                result = Math.max(result, ans);
             }
         }
 
