@@ -33,11 +33,8 @@ public class Main {
                     result = Math.max(result, ans);
                     break;
                 }
-
-                else {
-                    result = Math.max(result, ans);
-                }
             }
+            result = Math.max(result, ans);
         }
 
         System.out.println(result);
