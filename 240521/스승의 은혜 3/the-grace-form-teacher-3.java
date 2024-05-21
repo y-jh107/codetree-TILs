@@ -17,11 +17,6 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             int total = 0, ans = 0;
             for(int j = 0; j < n; j ++) {
-                if(total > budget) {
-                    ans --;
-                    result = Math.max(result, ans);
-                    break;
-                }
 
                 if(i == j) {
                     total += students[j][0] / 2 + students[j][1];
@@ -32,15 +27,17 @@ public class Main {
                     ans ++;
                 }
 
-                if(total <= budget) {
+                
+                if(total > budget) {
+                    ans --;
                     result = Math.max(result, ans);
+                    break;
                 }
 
-                //System.out.println(total);
-
-                
+                else {
+                    result = Math.max(result, ans);
+                }
             }
-            //System.out.println();
         }
 
         System.out.println(result);
