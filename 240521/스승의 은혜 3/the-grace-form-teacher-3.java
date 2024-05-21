@@ -29,7 +29,7 @@ public class Main {
 
                 total += sum;
 
-                if(total >= budget) {
+                if(total > budget) {
                     ans --;
                     total -= sum;
                 }
