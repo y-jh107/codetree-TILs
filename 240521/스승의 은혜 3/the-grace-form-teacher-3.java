@@ -17,7 +17,6 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             int total = 0, ans = 0;
             for(int j = 0; j < n; j ++) {
-
                 if(i == j) {
                     total += students[j][0] / 2 + students[j][1];
                     ans ++;
@@ -28,11 +27,16 @@ public class Main {
                 }
 
                 
-                if(total > budget) {
+
+                if(total >= budget) {
                     ans --;
-                    total -= students[j][0] + students[j][1];
+                    if(i == j) total -= (students[j][0] / 2 + students[j][1]);
+                    else total -= (students[j][0] + students[j][1]);
                 }
+
+                //System.out.println(total + " " + ans);
             }
+           // System.out.println();
             result = Math.max(result, ans);
         }
 
