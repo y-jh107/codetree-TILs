@@ -22,9 +22,6 @@ public class Main {
                     result = Math.max(result, ans);
                     break;
                 }
-                else {
-                    result = Math.max(result, ans);
-                }
 
                 if(i == j) {
                     total += students[j][0] / 2 + students[j][1];
@@ -34,6 +31,8 @@ public class Main {
                     total += students[j][0] + students[j][1];
                     ans ++;
                 }
+                
+                result = Math.max(result, ans);
 
                 //System.out.println(total);
             }
