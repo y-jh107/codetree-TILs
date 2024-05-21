@@ -31,7 +31,6 @@ public class Main {
                 if(total > budget) {
                     ans --;
                     total -= students[j][0] + students[j][1];
-                    continue;
                 }
             }
             result = Math.max(result, ans);
