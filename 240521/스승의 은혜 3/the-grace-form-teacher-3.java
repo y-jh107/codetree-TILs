@@ -17,21 +17,21 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             int total = 0, ans = 0;
             for(int j = 0; j < n; j ++) {
+                int sum = 0;
                 if(i == j) {
-                    total += students[j][0] / 2 + students[j][1];
+                    sum = students[j][0] / 2 + students[j][1];
                     ans ++;
                 }
                 else {
-                    total += students[j][0] + students[j][1];
+                    sum = students[j][0] + students[j][1];
                     ans ++;
                 }
 
-                
+                total += sum;
 
                 if(total >= budget) {
                     ans --;
-                    if(i == j) total -= (students[j][0] / 2 + students[j][1]);
-                    else total -= (students[j][0] + students[j][1]);
+                    total -= sum;
                 }
 
                 //System.out.println(total + " " + ans);
