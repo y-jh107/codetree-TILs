@@ -13,17 +13,20 @@ public class Main {
         }
 
         for(int i = 1; i <= MAX_N; i ++) {
+            int cnt = 0;
             for(int j = 0; j < n; j ++) {
-                int same = Math.abs(i - nums[j]);
+                int num1 = nums[j] - i;
                 for(int k = j + 1; k < n; k ++) {
-                    int isSame = Math.abs(i - nums[k]);
-
-                    if(same == isSame) {
-                        ans ++;
+                    int num2 = nums[k] - i;
+                    if(Math.abs(num1) == Math.abs(num2)) {
+                        cnt ++;
+                        //System.out.println(nums[j] + " " + i + " " + nums[k]);
                         break;
                     }
                 }
             }
+
+            ans = Math.max(ans, cnt);
         }
 
         System.out.println(ans);
