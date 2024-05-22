@@ -18,7 +18,10 @@ public class Main {
                 for(int k = j + 1; k < n; k ++) {
                     int isSame = Math.abs(i - nums[k]);
 
-                    if(same == isSame) ans ++;
+                    if(same == isSame) {
+                        ans ++;
+                        break;
+                    }
                 }
             }
         }
