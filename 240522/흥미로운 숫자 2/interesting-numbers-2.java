@@ -18,14 +18,23 @@ public class Main {
             }
 
             //Arrays.sort(nums);
-            int first = nums[0], cntNum = 0;
+            int cntNum = 0, n = idx;
             int[] checkedNum = new int[10];
+
             for(int j = 0; j < idx; j ++) {
                 checkedNum[nums[j]] ++;
-                if(checkedNum[nums[j]] == 1) cntNum ++;
             }
 
-            if(cntNum == 2) {
+            for(int j = 0; j < 10; j ++) {
+                if(checkedNum[j] != 0) {
+                    if(checkedNum[j] == 1) {
+                        idx --;
+                    }
+                    cntNum ++;
+                }
+            }
+
+            if(cntNum == 2 && idx == n - 1) {
                 cnt ++;
                 //System.out.println(i);
             }
