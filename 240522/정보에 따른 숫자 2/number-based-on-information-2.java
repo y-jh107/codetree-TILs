@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static int MAX_N = 1000;
-    public static char[] line = new char[MAX_N];
+    public static char[] line = new char[MAX_N + 1];
 
     public static boolean findSpecial(int curr) {
         int d1 = MAX_N, d2 = MAX_N;
