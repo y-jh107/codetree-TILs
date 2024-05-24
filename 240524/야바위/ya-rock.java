@@ -38,7 +38,7 @@ public class Main {
             }
 
             maxScore = Math.max(maxScore, cnt);
-            for(int j = 1; j <= n; j ++) {
+            for(int j = 1; j <= 3; j ++) {
                 yabawi[j] = 0;
             }
         }
