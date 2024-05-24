@@ -18,7 +18,7 @@ public class Main {
             arr[i] *= 2;
 
             for(int j = 0; j < n; j ++) {
-                int[] remainingArr = new int[4];
+                int[] remainingArr = new int[n - 1];
                 int idx = 0;
 
                 for(int k = 0; k < n; k ++) {
