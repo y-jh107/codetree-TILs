@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static int MAX_N = 100;
+    public static int MAX_N = Integer.MAX_VALUE;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -28,7 +28,7 @@ public class Main {
 
                 int sumDiff = 0;
 
-                for(int k = 0; k < n - 2; k ++) {
+                for(int k = 0; k < idx - 1; k ++) {
                     sumDiff += Math.abs(remainingArr[k + 1] - remainingArr[k]);
                 }
 
