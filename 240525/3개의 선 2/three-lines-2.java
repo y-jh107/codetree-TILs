@@ -6,12 +6,15 @@ public class Main {
     public static int[] x = new int[MAX_P];
     public static int[] y = new int[MAX_P];
 
-    public static boolean canCoverAllPoints(int[] xLines, int[] yLines) {
+    public static boolean canCoverAllPointsWithLines(int[] lines, boolean isX) {
         int coveredPoints = 0;
         for (int i = 0; i < n; i++) {
             boolean covered = false;
             for (int j = 0; j < 3; j++) {
-                if (x[i] == xLines[j] || y[i] == yLines[j]) {
+                if (isX && x[i] == lines[j]) {
+                    covered = true;
+                    break;
+                } else if (!isX && y[i] == lines[j]) {
                     covered = true;
                     break;
                 }
@@ -29,10 +32,14 @@ public class Main {
                 for (int k = j + 1; k < n; k++) {
                     int[] xLines = {x[i], x[j], x[k]};
                     int[] yLines = {y[i], y[j], y[k]};
-                    if (canCoverAllPoints(xLines, yLines)) {
+
+                    // Check if these x lines can cover all points
+                    if (canCoverAllPointsWithLines(xLines, true)) {
                         return true;
                     }
-                    if (canCoverAllPoints(yLines, xLines)) {
+
+                    // Check if these y lines can cover all points
+                    if (canCoverAllPointsWithLines(yLines, false)) {
                         return true;
                     }
                 }
