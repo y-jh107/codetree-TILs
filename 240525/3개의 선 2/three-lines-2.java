@@ -1,65 +1,84 @@
 import java.util.Scanner;
 
 public class Main {
-    public static int MAX_P = 20;
+    public static final int MAX_X = 10;
+    public static final int MAX_N = 20;
+    
     public static int n;
-    public static int[] x = new int[MAX_P];
-    public static int[] y = new int[MAX_P];
-
-    public static boolean canCoverAllPointsWithLines(int[] lines, boolean isX) {
-        int coveredPoints = 0;
-        for (int i = 0; i < n; i++) {
-            boolean covered = false;
-            for (int j = 0; j < 3; j++) {
-                if (isX && x[i] == lines[j]) {
-                    covered = true;
-                    break;
-                } else if (!isX && y[i] == lines[j]) {
-                    covered = true;
-                    break;
-                }
-            }
-            if (covered) {
-                coveredPoints++;
-            }
-        }
-        return coveredPoints == n;
-    }
-
-    public static boolean checkThreeLines() {
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                for (int k = j + 1; k < n; k++) {
-                    int[] xLines = {x[i], x[j], x[k]};
-                    int[] yLines = {y[i], y[j], y[k]};
-
-                    // Check if these x lines can cover all points
-                    if (canCoverAllPointsWithLines(xLines, true)) {
-                        return true;
-                    }
-
-                    // Check if these y lines can cover all points
-                    if (canCoverAllPointsWithLines(yLines, false)) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
+    public static int[] x = new int[MAX_N];
+    public static int[] y = new int[MAX_N];
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // 입력
         n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
+
+        for(int i = 0; i < n; i++) {
             x[i] = sc.nextInt();
             y[i] = sc.nextInt();
         }
 
-        if (checkThreeLines()) {
-            System.out.println(1);
-        } else {
-            System.out.println(0);
-        }
+        int ans = 0;
+
+        // 모든 직선에 대해 전부 시도해 봅니다.
+        for(int i = 0; i <= MAX_X; i++)
+            for(int j = 0; j <= MAX_X; j++)
+                for(int k = 0; k <= MAX_X; k++) {
+                    // success : 직선 3개로 모든 점을 지나게 할 수 있으면 true
+                    boolean success = true;
+                    // x축에 평행한 직선 3개로
+                    // 모든 점을 지나게 할 수 있는 경우
+                    for(int l = 0; l < n; l++) {
+                        // 해당 점이 직선에 닿으면 넘어갑니다
+                        if(x[l] == i || x[l] == j || x[l] == k)
+                            continue;
+                        
+                        success = false;
+                    }
+                    if(success)
+                        ans = 1;
+
+                    // x축에 평행한 직선 2개와 y축에 평행한 직선 1개로
+                    // 모든 점을 지나게 할 수 있는 경우
+                    success = true;
+                    for(int l = 0; l < n; l++) {
+                        // 해당 점이 직선에 닿으면 넘어갑니다
+                        if(x[l] == i || x[l] == j || y[l] == k)
+                            continue;
+                        
+                        success = false;
+                    }
+                    if(success)
+                        ans = 1;
+                    
+                    // x축에 평행한 직선 1개와 y축에 평행한 직선 2개로
+                    // 모든 점을 지나게 할 수 있는 경우
+                    success = true;
+                    for(int l = 0; l < n; l++) {
+                        // 해당 점이 직선에 닿으면 넘어갑니다
+                        if(x[l] == i || y[l] == j || y[l] == k)
+                            continue;
+                        
+                        success = false;
+                    }
+                    if(success)
+                        ans = 1;
+                    
+                    // y축에 평행한 직선 3개로
+                    // 모든 점을 지나게 할 수 있는 경우
+                    success = true;
+                    for(int l = 0; l < n; l++) {
+                        // 해당 점이 직선에 닿으면 넘어갑니다
+                        if(y[l] == i || y[l] == j || y[l] == k)
+                            continue;
+                        
+                        success = false;
+                    }
+                    if(success)
+                        ans = 1;
+                    
+                }
+
+        System.out.print(ans);
     }
 }
