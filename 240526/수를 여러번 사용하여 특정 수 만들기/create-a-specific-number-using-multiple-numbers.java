@@ -7,10 +7,10 @@ public class Main {
 
         int ans = 0;
 
-        for(int i = 0; i < 1000; i ++) {
+        for(int i = 0; i < 1001; i ++) {
             int sum = 0;
             sum += a * i;
-            for(int j = 0; j < 1000; j ++) {
+            for(int j = 0; j < 1001; j ++) {
                 sum += b * j;
                 if(sum <= c) {
                     ans = Math.max(ans, sum);
