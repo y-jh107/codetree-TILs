@@ -8,10 +8,8 @@ public class Main {
         int ans = 0;
 
         for(int i = 0; i <= c / a + 1; i ++) {
-            int sum = 0;
-            sum += a * i;
             for(int j = 0; j <= c / b + 1; j ++) {
-                sum += b * j;
+                int sum = a * i + b * j;
                 if(sum <= c) {
                     ans = Math.max(ans, sum);
                 }
