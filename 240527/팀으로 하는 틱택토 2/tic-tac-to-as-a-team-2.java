@@ -21,16 +21,18 @@ public class Main {
                 if(!isWinner(n1, n2)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
             else if(n1 == n2) {
                 if(!isWinner(n1, n3)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
-
-            return true;
         }
 
         return false;
@@ -44,16 +46,18 @@ public class Main {
                 if(!isWinner(n1, n2)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
             else if(n1 == n2) {
                 if(!isWinner(n1, n3)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
-
-            return true;
         }
 
         return false;
@@ -67,16 +71,18 @@ public class Main {
                 if(!isWinner(n1, n2)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
             else if(n1 == n2) {
                 if(!isWinner(n1, n3)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
-
-            return true;
         }
 
         return false;
@@ -90,16 +96,18 @@ public class Main {
                 if(!isWinner(n1, n2)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n2;
+
+                    return true;
                 }
             }
             else if(n1 == n2) {
                 if(!isWinner(n1, n3)) {
                     winComb[idx][0] = n1;
                     winComb[idx ++][1] = n3;
+
+                    return true;
                 }
             }
-
-            return true;
         }
 
         return false;
@@ -107,7 +115,9 @@ public class Main {
 
     public static boolean isWinner(int n1, int n2) {
         for(int k = 0; k < 100; k ++) {
-            if(winComb[k][0] == n1 && winComb[k][1] == n2) return true;
+            if(winComb[k][0] == n1 && winComb[k][1] == n2) {
+                return true;
+            }
             if(winComb[k][0] == n2 && winComb[k][1] == n1) return true;
         }
 
