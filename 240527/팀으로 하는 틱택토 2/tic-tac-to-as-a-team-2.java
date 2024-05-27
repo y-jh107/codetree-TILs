@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static int whichCase = 0;
+    public static int whichCase = 0, idx = 0;
     public static int[][] tic = new int[3][3];
     public static int[][] winner = new int[100][2];
 
@@ -17,33 +17,93 @@ public class Main {
     }
 
     public static boolean case1(int i, int j) {
-        if(tic[i + 1][j] == tic[i][j] && tic[i + 2][j] != tic[i][j]) return true;
-        else if(tic[i + 2][j] == tic[i][j] && tic[i +1][j] != tic[i][j]) return true;
-        else if(tic[i][j] != tic[i + 1][j] && tic[i + 1][j] == tic[i + 2][j]) return true;
+        if(tic[i + 1][j] == tic[i][j] && tic[i + 2][j] != tic[i][j]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i + 2][j] == tic[i][j] && tic[i +1][j] != tic[i][j]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] != tic[i + 1][j] && tic[i + 1][j] == tic[i + 2][j]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
 
         return false;
     }
 
     public static boolean case2(int i, int j) {
-        if(tic[i][j] == tic[i][j + 1] && tic[i][j] != tic[i][j + 2]) return true;
-        else if(tic[i][j] == tic[i][j + 2] && tic[i][j] != tic[i][j + 1]) return true;
-        else if(tic[i][j] != tic[i][j + 1] && tic[i][j + 1] == tic[i][j + 2]) return true;
+        if(tic[i][j] == tic[i][j + 1] && tic[i][j] != tic[i][j + 2]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] == tic[i][j + 2] && tic[i][j] != tic[i][j + 1]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] != tic[i][j + 1] && tic[i][j + 1] == tic[i][j + 2]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
 
         return false;
     }
 
     public static boolean case3(int i, int j) {
-        if(tic[i][j] == tic[i + 1][j + 1] && tic[i][j] != tic[i + 2][j + 2]) return true;
-        else if(tic[i][j] == tic[i + 2][j + 2] && tic[i][j] != tic[i + 1][j + 1]) return true;
-        else if(tic[i][j] != tic[i + 1][j + 1] && tic[i + 1][j + 1] == tic[i + 2][j + 2]) return true;
+        if(tic[i][j] == tic[i + 1][j + 1] && tic[i][j] != tic[i + 2][j + 2]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] == tic[i + 2][j + 2] && tic[i][j] != tic[i + 1][j + 1]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] != tic[i + 1][j + 1] && tic[i + 1][j + 1] == tic[i + 2][j + 2]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
 
         return false; 
     }
 
     public static boolean case4(int i, int j) {
-        if(tic[i][j] == tic[i + 1][j - 1] && tic[i][j] != tic[i + 2][j - 2]) return true;
-        else if(tic[i][j] == tic[i + 2][j - 2] && tic[i][j] != tic[i + 1][j - 1]) return true;
-        else if(tic[i][j] != tic[i + 1][j - 1] && tic[i + 1][j - 1] == tic[i + 2][j - 2]) return true;
+        if(tic[i][j] == tic[i + 1][j - 1] && tic[i][j] != tic[i + 2][j - 2]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] == tic[i + 2][j - 2] && tic[i][j] != tic[i + 1][j - 1]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
+        else if(tic[i][j] != tic[i + 1][j - 1] && tic[i + 1][j - 1] == tic[i + 2][j - 2]) {
+            winner[idx][0] = i;
+            winner[idx][1] = j;
+            idx ++;
+            return true;
+        }
 
         return false; 
     }
@@ -65,39 +125,37 @@ public class Main {
         for(int i = 0; i < 3; i ++) {
             for(int j = 0; j < 3; j ++) {
                 if(i == 0 && j == 0) {
-                    if(case1(i, j) && isWinner(i, j)){
-                        ans ++;
-                        winner[idx][0] == i;
-                        winner[idx ++][1] == j;
-                    }
-
-                    if(case2(i, j) && isWinner(i, j)) {
+                    if(case1(i, j) && !isWinner(i, j)){
                         ans ++;
                     }
 
-                    if(case3(i, j) && isWinner(i, j)) {
+                    if(case2(i, j) && !isWinner(i, j)) {
+                        ans ++;
+                    }
+
+                    if(case3(i, j) && !isWinner(i, j)) {
                         ans ++;
                     }
                 }
 
                 else if(i == 0 && j == 1) {
-                    if(case1(i, j) && isWinner(i, j)) {
+                    if(case1(i, j) && !isWinner(i, j)) {
                         ans ++;
                     }
                 }
 
                 else if(i == 0 && j == 2) {
-                    if(case1(i, j) && isWinner(i, j)) {
+                    if(case1(i, j) && !isWinner(i, j)) {
                         ans ++;
                     }
 
-                    if(case4(i, j) && isWinner(i, j)) {
+                    if(case4(i, j) && !isWinner(i, j)) {
                         ans ++;
                     }
                 }
 
                 else if(i > 0 && j == 0) {
-                    if(case2(i, j) && isWinner(i, j)) ans ++;
+                    if(case2(i, j) && !isWinner(i, j)) ans ++;
                 }
             }
         }
