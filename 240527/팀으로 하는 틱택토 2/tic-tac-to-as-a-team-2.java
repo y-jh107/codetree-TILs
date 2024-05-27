@@ -2,31 +2,42 @@ import java.util.*;
 
 public class Main {
     public static int whichCase = 0;
+    public static int[][] tic = new int[3][3];
 
-    public static boolean inRange(int i, int j) {
-        if(i + 1 < 3 && i + 2 < 3 && j < 3) {
-            whichCase = 1;
-            return true;
-        }
-        else if(i < 3 && j + 1 < 3 && j + 2 < 3) {
-            whichCase = 2;
-            return true;
-        }
-        else if((i + 1 < 3 && j + 1 < 3) && (i + 2 < 3 && j + 2 < 3)) {
-            whichCase = 3;
-            return true;
-        }
-        else if((i - 1 >= 0 && j - 1 >= 0) && (i - 2 >= 0 && j - 2 >= 0)) {
-            whichCase = 4;
-            return true;
-        }
+    public static boolean case1(int i, int j) {
+        if(tic[i + 1][j] == tic[i][j] && tic[i + 2][j] != tic[i][j]) return true;
+        else if(tic[i + 2][j] == tic[i][j] && tic[i +1][j] != tic[i][j]) return true;
+        else if(tic[i][j] != tic[i + 1][j] && tic[i + 1][j] == tic[i + 2][j]) return true;
 
         return false;
     }
 
+    public static boolean case2(int i, int j) {
+        if(tic[i][j] == tic[i][j + 1] && tic[i][j] != tic[i][j + 2]) return true;
+        else if(tic[i][j] == tic[i][j + 2] && tic[i][j] != tic[i][j + 1]) return true;
+        else if(tic[i][j] != tic[i][j + 1] && tic[i][j + 1] == tic[i][j + 2]) return true;
+
+        return false;
+    }
+
+    public static boolean case3(int i, int j) {
+        if(tic[i][j] == tic[i + 1][j + 1] && tic[i][j] != tic[i + 2][j + 2]) return true;
+        else if(tic[i][j] == tic[i + 2][j + 2] && tic[i][j] != tic[i + 1][j + 1]) return true;
+        else if(tic[i][j] != tic[i + 1][j + 1] && tic[i + 1][j + 1] == tic[i + 2][j + 2]) return true;
+
+        return false; 
+    }
+
+    public static boolean case4(int i, int j) {
+        if(tic[i][j] == tic[i + 1][j - 1] && tic[i][j] != tic[i + 2][j - 2]) return true;
+        else if(tic[i][j] == tic[i + 2][j - 2] && tic[i][j] != tic[i + 1][j - 1]) return true;
+        else if(tic[i][j] != tic[i + 1][j - 1] && tic[i + 1][j - 1] == tic[i + 2][j - 2]) return true;
+
+        return false; 
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[][] tic = new int[3][3];
 
         for(int i = 0; i < 3; i ++) {
             int col = sc.nextInt();
@@ -40,30 +51,38 @@ public class Main {
 
         for(int i = 0; i < 3; i ++) {
             for(int j = 0; j < 3; j ++) {
-                if(inRange(i, j)) {
-                    if(whichCase == 1) {
-                        if(tic[i][j] == tic[i + 1][j] && tic[i][j] != tic[i + 2][j]) ans ++;
-                        else if(tic[i][j] == tic[i + 2][j] && tic[i][j] != tic[i + 1][j]) ans ++;
-                        else if(tic[i][j] != tic[i + 1][j] && tic[i + 1][j] == tic[i + 2][j]) ans ++;
+                if(i == 0 && j == 0) {
+                    if(case1(i, j)){
+                        ans ++;
                     }
 
-                    else if(whichCase == 2) {
-                        if(tic[i][j] == tic[i][j + 1] && tic[i][j] != tic[i][j + 2]) ans ++;
-                        else if(tic[i][j] == tic[i][j + 2] && tic[i][j] != tic[i][j + 1]) ans ++;
-                        else if(tic[i][j] != tic[i][j + 1] && tic[i][j + 1] == tic[i][j + 2]) ans ++;
+                    if(case2(i, j)) {
+                        ans ++;
                     }
 
-                    else if(whichCase == 3) {
-                        if(tic[i][j] == tic[i + 1][j + 1] && tic[i][j] != tic[i + 2][j + 2]) ans ++;
-                        else if(tic[i][j] == tic[i + 2][j + 2] && tic[i][j] != tic[i + 1][j + 1]) ans ++;
-                        else if(tic[i][j] != tic[i + 1][j + 1] && tic[i + 1][j + 1] == tic[i + 2][j + 2]) ans ++;
+                    if(case3(i, j)) {
+                        ans ++;
+                    }
+                }
+
+                else if(i == 0 && j == 1) {
+                    if(case1(i, j)) {
+                        ans ++;
+                    }
+                }
+
+                else if(i == 0 && j == 2) {
+                    if(case1(i, j)) {
+                        ans ++;
                     }
 
-                    else if(whichCase == 4) {
-                        if(tic[i][j] == tic[i - 1][j - 1] && tic[i][j] != tic[i - 2][j - 2]) ans ++;
-                        else if(tic[i][j] == tic[i - 2][j - 2] && tic[i][j] != tic[i - 1][j - 1]) ans ++;
-                        else if(tic[i][j] != tic[i - 1][j - 1] && tic[i - 1][j - 1] == tic[i - 2][j - 2]) ans ++;
+                    if(case4(i, j)) {
+                        ans ++;
                     }
+                }
+
+                else if(i > 0 && j == 0) {
+                    if(case2(i, j)) ans ++;
                 }
             }
         }
