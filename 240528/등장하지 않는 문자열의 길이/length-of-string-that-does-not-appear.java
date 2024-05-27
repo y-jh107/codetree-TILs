@@ -19,15 +19,16 @@ public class Main {
                 if(arr[i] == arr[j]) {
                     int idx = j - i;
                     //System.out.println(idx);
-                    int cnt = 1;
-                    for(int k = 1; k < n - j; k ++) {
+                    int cnt = 0;
+                    for(int k = 0; k < n - j; k ++) {
+                        //System.out.println(arr[i + k] + " " + arr[j + k]);
                         if(arr[i + k] == arr[j + k]) {
-                            //System.out.println(arr[i + k] + " " + arr[j + k] + " " + cnt);
                             cnt ++;
+                            //System.out.print(cnt);
                         }
                     }
-                    //System.out.println();
-                    ans = Math.max(ans, cnt);
+                    
+                    ans = Math.max(ans, cnt + 1);
                 }
             }
 
