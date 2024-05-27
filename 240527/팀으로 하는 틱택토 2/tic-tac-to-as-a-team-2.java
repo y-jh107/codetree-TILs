@@ -42,23 +42,27 @@ public class Main {
             for(int j = 0; j < 3; j ++) {
                 if(inRange(i, j)) {
                     if(whichCase == 1) {
-                        if(tic[i][j] == tic[i + 1][j]) ans ++;
-                        else if(tic[i][j] == tic[i + 2][j]) ans ++;
+                        if(tic[i][j] == tic[i + 1][j] && tic[i][j] != tic[i + 2][j]) ans ++;
+                        else if(tic[i][j] == tic[i + 2][j] && tic[i][j] != tic[i + 1][j]) ans ++;
+                        else if(tic[i][j] != tic[i + 1][j] && tic[i + 1][j] == tic[i + 2][j]) ans ++;
                     }
 
                     else if(whichCase == 2) {
-                        if(tic[i][j] == tic[i][j + 1]) ans ++;
-                        else if(tic[i][j] == tic[i][j + 2]) ans ++;
+                        if(tic[i][j] == tic[i][j + 1] && tic[i][j] != tic[i][j + 2]) ans ++;
+                        else if(tic[i][j] == tic[i][j + 2] && tic[i][j] != tic[i][j + 1]) ans ++;
+                        else if(tic[i][j] != tic[i][j + 1] && tic[i][j + 1] == tic[i][j + 2]) ans ++;
                     }
 
                     else if(whichCase == 3) {
-                        if(tic[i][j] == tic[i + 1][j + 1]) ans ++;
-                        else if(tic[i][j] == tic[i + 2][j + 2]) ans ++;
+                        if(tic[i][j] == tic[i + 1][j + 1] && tic[i][j] != tic[i + 2][j + 2]) ans ++;
+                        else if(tic[i][j] == tic[i + 2][j + 2] && tic[i][j] != tic[i + 1][j + 1]) ans ++;
+                        else if(tic[i][j] != tic[i + 1][j + 1] && tic[i + 1][j + 1] == tic[i + 2][j + 2]) ans ++;
                     }
 
                     else if(whichCase == 4) {
-                        if(tic[i][j] == tic[i - 1][j - 1]) ans ++;
-                        else if(tic[i][j] == tic[i - 2][j - 2]) ans ++;
+                        if(tic[i][j] == tic[i - 1][j - 1] && tic[i][j] != tic[i - 2][j - 2]) ans ++;
+                        else if(tic[i][j] == tic[i - 2][j - 2] && tic[i][j] != tic[i - 1][j - 1]) ans ++;
+                        else if(tic[i][j] != tic[i - 1][j - 1] && tic[i - 1][j - 1] == tic[i - 2][j - 2]) ans ++;
                     }
                 }
             }
