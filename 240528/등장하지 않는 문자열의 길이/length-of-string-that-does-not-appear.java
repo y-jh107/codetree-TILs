@@ -14,17 +14,21 @@ public class Main {
         int ans = 0;
 
         for(int i = 0; i < n; i ++) {
-            int cnt = 1;
+            
             for(int j = i + 1; j < n; j ++) {
                 if(arr[i] == arr[j]) {
                     int idx = j - i;
+                    int cnt = 1;
                     for(int k = 0; k < n - j; k ++) {
-                        if(arr[i + k] == arr[j + k]) cnt ++;
+                        if(arr[i + k] == arr[j + k]) {
+                            //System.out.println(arr[i + k] + " " + arr[j + k]);
+                            cnt ++;
+                        }
                     }
+                    ans = Math.max(ans, cnt);
                 }
             }
 
-            ans = Math.max(ans, cnt);
         }
 
         System.out.println(ans);
