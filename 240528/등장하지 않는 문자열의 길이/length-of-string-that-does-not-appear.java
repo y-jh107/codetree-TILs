@@ -21,6 +21,9 @@ public class Main {
                     //System.out.println(idx);
                     int cnt = 0;
                     for(int k = 0; k < n - j; k ++) {
+                        if(j + k == n - 1) {
+                            cnt ++;
+                        }
                         //System.out.println(arr[i + k] + " " + arr[j + k]);
                         if(arr[i + k] == arr[j + k]) {
                             cnt ++;
