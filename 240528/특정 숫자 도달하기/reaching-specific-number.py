@@ -1,11 +1,10 @@
 nums = list(map(int, input().split()))
 
 for i in range(10):
-    num = nums[i]
     sum = 0
 
-    if num >= 250:
-        for j in range(10 - i):
+    if nums[i] >= 250:
+        for j in range(i):
             sum += nums[j]
-        print(sum, sum / (10 - i))
+        print("%d %.1f" %(sum, sum / (i)))
         break
