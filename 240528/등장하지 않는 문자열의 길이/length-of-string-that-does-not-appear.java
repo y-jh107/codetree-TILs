@@ -26,9 +26,13 @@ public class Main {
                             cnt ++;
                             //System.out.print(cnt);
                         }
+                        if(j + k == n - 1) {
+                            cnt ++;
+                            break;
+                        }
                     }
                     
-                    ans = Math.max(ans, cnt + 1);
+                    ans = Math.max(ans, cnt);
                 }
             }
 
