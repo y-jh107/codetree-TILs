@@ -26,9 +26,7 @@ public class Main {
                             cnt ++;
                             //System.out.print(cnt);
                         }
-                        else break;
-                        
-                        if(j + k == n - 1) {
+                        else {
                             cnt ++;
                             break;
                         }
