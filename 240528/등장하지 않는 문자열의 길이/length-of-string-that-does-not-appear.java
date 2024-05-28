@@ -23,6 +23,7 @@ public class Main {
                     for(int k = 0; k < n - j; k ++) {
                         if(j + k == n - 1) {
                             cnt ++;
+                            break;
                         }
                         //System.out.println(arr[i + k] + " " + arr[j + k]);
                         if(arr[i + k] == arr[j + k]) {
