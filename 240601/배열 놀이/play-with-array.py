@@ -5,7 +5,7 @@ q = n_and_q[1]
 
 _list = list(map(int, input().split()))
 
-for i in range(n):
+for i in range(q):
     question = list(map(int, input().split()))
     if question[0] == 1:
         print(_list[question[1] - 1])
@@ -17,3 +17,4 @@ for i in range(n):
     elif question[0] == 3:
         for j in range(question[1] - 1, question[2]):
             print(_list[j], end = ' ')
+        print()
