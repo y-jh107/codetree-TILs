@@ -8,9 +8,10 @@ max_index = arr.index(max_value)
 
 print(max_index + 1, end = ' ')
 
-is_true = True
+while True:
+    if max_index == 0:
+        break
 
-while is_true:
     max_value = -sys.maxsize
     for i in range(max_index):
         if arr[i] > max_value:
@@ -18,7 +19,3 @@ while is_true:
     
     max_index = arr.index(max_value)
     print(max_index + 1, end = ' ')
-
-    if max_index == 0:
-        is_true = False
-        break
