@@ -13,6 +13,6 @@ for i in range(n):
         if earn > max_earn:
             max_earn = earn
 
-if max_earn == -sys.maxsize:
+if max_earn < 0:
     max_earn = 0
 print(max_earn)
