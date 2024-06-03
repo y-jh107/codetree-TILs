@@ -1,15 +1,19 @@
-import sys
-
 n = int(input())
 
 arr = list(map(int, input().split()))
 
-max_value = -sys.maxsize
-is_true = 0
+max_value = -1
+is_in = []
 
-for i in arr:
-    if is_true != i and i > max_value:
-        max_value = i
-        is_true = i
+for i in range(n):
+    if arr[i] in is_in:
+        continue
+
+    if arr[i] in arr[i + 1:]:
+        is_in.append(arr[i])
+        continue
+
+    if  arr[i] > max_value:
+        max_value = arr[i]
 
 print(max_value)
