@@ -33,6 +33,7 @@ public class Main {
         }
 
         for(int i = 0; i < n; i ++) {
+            if(chairs[i] == 1) continue;
             int[] newArray = new int[n];
 
             for(int j = 0; j < n; j ++) {
