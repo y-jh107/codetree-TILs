@@ -5,19 +5,22 @@ public class Main {
     public static int[] chairs = new int[MAX_N + 1];
 
     public static int closestSeats(int[] arr) {
-        int countZero = 0, closest = MAX_N;
+        int len = 0, closest = MAX_N;
 
         for(int i = 0; i < arr.length - 1; i ++) {
             if(arr[i] == 1) {
+                //System.out.println(i);
                 for(int j = i + 1; j < arr.length; j ++) {
                     if(arr[j] == 1) {
-                        countZero = j - i;
+                        len = j - i;
+                        //System.out.print(len + " ");
                         break;
                     }
                 }
-            }
 
-            closest = Math.min(closest, countZero);
+                closest = Math.min(closest, len);
+            }
+            
         }
 
         return closest;
@@ -34,6 +37,7 @@ public class Main {
 
         for(int i = 0; i < n; i ++) {
             if(chairs[i] == 1) continue;
+
             int[] newArray = new int[n];
 
             for(int j = 0; j < n; j ++) {
