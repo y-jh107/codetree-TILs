@@ -7,7 +7,7 @@ public class Main {
     public static int closestSeats(int[] arr) {
         int countZero = 0, closest = MAX_N;
 
-        for(int i = 0; i < arr.length; i ++) {
+        for(int i = 0; i < arr.length - 1; i ++) {
             if(arr[i] == 1) {
                 if(arr[i + 1] == 1) return 0;
                 for(int j = i + 1; j < arr.length; j ++) {
