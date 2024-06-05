@@ -9,16 +9,19 @@ public class Main {
 
         for(int i = 0; i < arr.length; i ++) {
             if(arr[i] == 1) {
+                if(arr[i + 1] == 1) return 0;
                 for(int j = i + 1; j < arr.length; j ++) {
-                    if(arr[j] == 1) break;
-                    countZero ++;
+                    if(arr[j] == 1) {
+                        countZero = j - i - 1;
+                        break;
+                    }
                 }
-
-                closest = Math.min(closest, countZero);
             }
+
+            closest = Math.min(closest, countZero);
         }
 
-        return closest - 1;
+        return closest;
     }
 
     public static void main(String[] args) {
@@ -31,18 +34,22 @@ public class Main {
         }
 
         for(int i = 0; i < n; i ++) {
-            if(chairs[i] != 1) {
-                int[] newArray = new int[n];
+            int[] newArray = new int[n];
 
-                for(int j = 0; j < n; j ++) {
-                    if(i == j) newArray[j] = 1;
-                    else newArray[j] = chairs[j];
-                }
-
-                int close = closestSeats(newArray);
-
-                ans = Math.max(ans, close);
+            for(int j = 0; j < n; j ++) {
+                if(i == j) newArray[j] = 1;
+                else newArray[j] = chairs[j];
             }
+
+            /*for(int j = 0; j < n; j ++) {
+                System.out.print(newArray[j] + " ");
+            }
+            System.out.println();*/
+
+            int close = closestSeats(newArray);
+            //System.out.println(close);
+
+            ans = Math.max(ans, close);
         }
 
         System.out.println(ans);
