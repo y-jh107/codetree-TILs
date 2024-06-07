@@ -22,17 +22,22 @@ public class Main {
             for(int j = 0; j < n; j ++) {
                 if(j == i) continue;
 
-                boolean canPut = true;
+                boolean canPut = false;
 
                 for(int l = 0; l < arr.length; l ++) {
                     if(Math.abs(nums[j] - arr[l]) > k) {
-                        canPut = false;
-                        continue;
+                        break;
                     }
+                    canPut = true;
                 }
 
                 if(canPut) arr[idx ++] = nums[j];
             }
+
+            /*for(int l = 0; l < arr.length; l ++) {
+                System.out.print(arr[l] + " ");
+            }
+            System.out.println();*/
 
             ans = Math.max(ans, idx);
         }
