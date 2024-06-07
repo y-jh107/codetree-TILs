@@ -25,8 +25,8 @@ public class Main {
                 if(currMax < nums[j]) currMax = nums[j];
                 if(currMin > nums[j]) currMin = nums[j];
 
+                cnt = j - i + 1;
                 if(Math.abs(currMax - currMin) > k) {
-                    cnt = j - i;
                     break;
                 }
             }
