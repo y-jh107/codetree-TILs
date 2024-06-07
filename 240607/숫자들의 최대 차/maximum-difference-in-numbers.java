@@ -21,16 +21,19 @@ public class Main {
             int currMax = nums[i], currMin = nums[i];
             int cnt = 0;
 
+            boolean toEnd = true;
             for(int j = i + 1; j < n; j ++) {
                 if(currMax < nums[j]) currMax = nums[j];
                 if(currMin > nums[j]) currMin = nums[j];
 
-                cnt = j - i + 1;
+                cnt = j - i;
                 if(Math.abs(currMax - currMin) > k) {
+                    toEnd = false;
                     break;
                 }
             }
-
+            
+            if(toEnd) cnt ++;
             ans = Math.max(ans, cnt);
         }
 
