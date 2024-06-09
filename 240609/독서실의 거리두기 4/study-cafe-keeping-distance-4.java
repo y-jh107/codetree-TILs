@@ -32,21 +32,25 @@ public class Main {
 
         for(int i = 0; i < n; i ++) {
             if(seated[i] == 1) continue;
+            for(int k = i + 1; k < n; k ++) {
+                if(seated[k] == 1) continue;
 
-            int[] tempArr = new int[n];
-            for(int j = 0; j < n; j ++) {
-                if(i == j) tempArr[j] = 1;
-                else tempArr[j] = seated[j];
+                int[] tempArr = new int[n];
+                for(int j = 0; j < n; j ++) {
+                    if(j == i || j == k) tempArr[j] = 1;
+                    else tempArr[j] = seated[j];
+                }
+                //System.out.println(i + " " + k);
+                /*for(int j = 0; j < n; j ++) {
+                    
+                    System.out.print(tempArr[j] + " ");
+                }
+                System.out.println();*/
+
+                int maxDis = findMin(tempArr);
+
+                ans = Math.max(ans, maxDis);
             }
-
-            /*for(int j = 0; j < n; j ++) {
-                System.out.print(tempArr[j] + " ");
-            }
-            System.out.println();*/
-
-            int maxDis = findMin(tempArr);
-
-            ans = Math.max(ans, maxDis);
         }
 
         System.out.println(ans);
