@@ -11,7 +11,7 @@ public class Main {
 
         for(int i = 0; i < n; i ++) {
             if(i == x) continue;
-            if(bomb[i] == bomb[x] && Math.abs(i - x) < 3) isBoom = true; 
+            if(bomb[i] == bomb[x] && Math.abs(i - x) < k) isBoom = true; 
         }
 
         return isBoom;
