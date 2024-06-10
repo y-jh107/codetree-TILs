@@ -26,7 +26,7 @@ public class Main {
             bomb[i] = sc.nextInt();
         }
 
-        int ans = 0;
+        int ans = 0, boomed = 0;
         int[] boom = new int[MAX_N];
 
         for(int i = 0; i < n; i ++) {
@@ -36,7 +36,12 @@ public class Main {
         }
 
         for(int i = 0; i < MAX_N; i ++) {
-            if(boom[i] >= ans) ans = i;
+            //System.out.print(boom[i] + " ");
+            if(boom[i] >= boomed) {
+                //System.out.println(ans);
+                ans = i;
+                boomed = boom[i];
+            }
         }
 
         System.out.println(ans);
