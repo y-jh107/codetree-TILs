@@ -36,7 +36,7 @@ public class Main {
         }
 
         for(int i = 0; i < MAX_N; i ++) {
-            if(boom[i] > ans) ans = i;
+            if(boom[i] >= ans) ans = i;
         }
 
         System.out.println(ans);
