@@ -5,6 +5,7 @@ public class Main {
     public static int[] arr = new int[n];
 
     public static boolean findABCD(int a, int b, int c, int d) {
+        //System.out.println(a + " " + b + " " + c + " " + d);
 
         for(int i = 0; i < n; i ++) {
             if(arr[i] == a || arr[i] == b || arr[i] == c || arr[i] == d) continue;
@@ -25,6 +26,7 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             arr[i] = sc.nextInt();
         }
+        Arrays.sort(arr);
 
         int[] ans = new int[4];
         boolean findAns = false;
