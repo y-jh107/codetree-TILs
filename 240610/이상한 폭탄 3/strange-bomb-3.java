@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     public static int MAX_N = 100;
+    public static int MAX_BOMB = 1000000;
     public static int[] bomb = new int[MAX_N];
     public static int n, k;
     
@@ -26,8 +27,8 @@ public class Main {
             bomb[i] = sc.nextInt();
         }
 
-        int ans = 0, boomed = 0;
-        int[] boom = new int[MAX_N];
+        int ans = 0, boomed = -1;
+        int[] boom = new int[MAX_BOMB];
 
         for(int i = 0; i < n; i ++) {
             if(isTrue(i)) {
@@ -35,9 +36,9 @@ public class Main {
             }
         }
 
-        for(int i = 0; i < MAX_N; i ++) {
+        for(int i = 0; i < MAX_BOMB; i ++) {
             //System.out.print(boom[i] + " ");
-            if(boom[i] >= boomed) {
+            if(boom[i] >= boomed && boom[i] != 0) {
                 //System.out.println(ans);
                 ans = i;
                 boomed = boom[i];
