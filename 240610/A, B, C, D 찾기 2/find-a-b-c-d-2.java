@@ -9,6 +9,7 @@ public class Main {
         for(int i = 0; i < n; i ++) {
             if(arr[i] == a || arr[i] == b || arr[i] == c || arr[i] == d) continue;
             else if(arr[i] == a + b || arr[i] == b + c || arr[i] == c + d || arr[i] == d + a) continue;
+            else if(arr[i] == a + c || arr[i] == b + d) continue;
             else if(arr[i] == a + b + c || arr[i] == a + b + d || arr[i] == a + c + d || arr[i] == b + c + d)
                 continue;
             else if(arr[i] == a + b + c + d) continue;
