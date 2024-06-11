@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static int MAX_N = 1000;
+    public static int MAX_N = 1000 * 100;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
