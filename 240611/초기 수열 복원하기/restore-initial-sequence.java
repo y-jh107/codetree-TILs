@@ -23,7 +23,7 @@ public class Main {
             boolean isAnswer = true;
 
             for(int j = 0; j < n - 1; j ++) {
-                ans[j + 1] = arr[j] - ans[j];
+                ans[j + 1] = Math.abs(arr[j] - ans[j]);
                 isUsed[ans[j + 1]] = true;
             }
 
