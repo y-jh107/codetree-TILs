@@ -32,8 +32,9 @@ public class Main {
                 }
             }
 
-            if(mcnt <= m - 1 && m == i) {
-                ans = Math.max(ans, i);
+            if(mcnt <= m - 1 && max == i) {
+                ans = Math.max(ans, max);
+                break;
             }
         }
 
