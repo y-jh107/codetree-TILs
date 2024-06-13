@@ -38,7 +38,7 @@ public class Main {
 
             if(possible) {
                 if(section <= m - 1) {
-                    ans = Math.max(ans, max);
+                    ans = Math.max(ans, i);
                     break;
                 }
             }
