@@ -12,35 +12,32 @@ public class Main {
         for(int i = 0; i < n; i ++)
             arr[i] = sc.nextInt();
 
-        int ans = 0;
+        int ans = Integer.MAX_VALUE;
 
         for(int i = 1; i <= MAX_N * MAX_N; i ++) {
-            int sum = 0, currSum;
-            int max = 0;
-            int mcnt = 0;
-            //System.out.println(i);
+            int sum = 0, max = 0;
+            int section = 0;
+            boolean possible = true;
 
             for(int j = 0; j < n; j ++) {
-                if(arr[j] > i) break;
+                if(arr[j] > i) {
+                    possible = false;
+                    break;
+                }
 
                 sum += arr[j];
-                //System.out.println(sum + " + " + arr[j] + " ");
-                
+
                 if(sum > i) {
                     sum -= arr[j];
                     if(sum > max) max = sum;
 
+                    section ++;
                     sum = arr[j];
-                    //System.out.println(sum);
-                    mcnt ++;
                 }
             }
-            //max = Math.max(max, sum);
-            //System.out.println();
 
-            if(mcnt <= m - 1 && max == i) {
-                ans = Math.max(ans, i);
-                break;
+            if(section <= m - 1 && max == i) {
+                ans = Math.min(ans, i);
             }
         }
 
