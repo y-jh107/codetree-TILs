@@ -15,25 +15,31 @@ public class Main {
         int ans = 0;
 
         for(int i = 1; i <= MAX_N * MAX_N; i ++) {
-            int sum = 0;
+            int sum = 0, currSum;
             int max = 0;
             int mcnt = 0;
+            //System.out.println(i);
 
             for(int j = 0; j < n; j ++) {
                 if(arr[j] > i) break;
 
                 sum += arr[j];
+                //System.out.println(sum + " + " + arr[j] + " ");
+                
                 if(sum > i) {
                     sum -= arr[j];
                     if(sum > max) max = sum;
 
                     sum = arr[j];
+                    //System.out.println(sum);
                     mcnt ++;
                 }
             }
+            //max = Math.max(max, sum);
+            //System.out.println();
 
             if(mcnt <= m - 1 && max == i) {
-                ans = Math.max(ans, max);
+                ans = Math.max(ans, i);
                 break;
             }
         }
