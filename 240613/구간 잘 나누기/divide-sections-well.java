@@ -12,7 +12,7 @@ public class Main {
         for(int i = 0; i < n; i ++)
             arr[i] = sc.nextInt();
 
-        int ans = Integer.MAX_VALUE;
+        int ans = 0;//Integer.MAX_VALUE;
 
         for(int i = 1; i <= MAX_N * MAX_N; i ++) {
             int sum = 0, max = 0;
@@ -36,8 +36,11 @@ public class Main {
                 }
             }
 
-            if(section <= m - 1 && max == i) {
-                ans = Math.min(ans, i);
+            if(possible) {
+                if(section <= m - 1) {
+                    ans = Math.max(ans, max);
+                    break;
+                }
             }
         }
 
