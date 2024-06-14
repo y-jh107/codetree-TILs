@@ -16,26 +16,22 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int ans = 0;
-
-        for(int i = 0; i <= MAX_N; i ++) {
-            int cnt = 0, maxVal = 0;
+        for(int i = n; i >= 0; i --) {
+            int hcnt = 0, lcnt = 0;
 
             for(int j = 0; j < n; j ++) {
-                for(int k = 0; k < l; k ++) {
-                    arr[j] += 1;
-                }
-
-                if(arr[j] >= i) {
-                    cnt ++;
-                    maxVal = Math.max(maxVal, arr[j]);
+                if(arr[j] >= i)
+                    hcnt ++;
+                else if(arr[j] == i - 1) {
+                    hcnt ++; 
+                    lcnt ++;
                 }
             }
 
-            if(cnt >= i)
-                ans = Math.max(ans, i);
+            if(hcnt >= i && (lcnt - (hcnt - i) <= 1)) {
+                System.out.println(i);
+                break;
+            }
         }
-
-        System.out.println(ans);
     }
 }
