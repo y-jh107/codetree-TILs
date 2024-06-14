@@ -28,7 +28,7 @@ public class Main {
                 }
             }
 
-            if(hcnt >= i && (lcnt - (hcnt - i) <= 1)) {
+            if(hcnt >= i && (lcnt - (hcnt - i) <= l)) {
                 System.out.println(i);
                 break;
             }
