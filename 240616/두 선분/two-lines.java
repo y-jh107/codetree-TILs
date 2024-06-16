@@ -9,7 +9,7 @@ public class Main {
 
         boolean isOverlap = false;
 
-        if((x2 >= x3) || (x1 >= x3 && x2 <= x4)) isOverlap = true;
+        if((x2 >= x3 && x2 <= x4) || (x1 >= x3 && x2 <= x4)) isOverlap = true;
 
         if(isOverlap) System.out.println("intersecting");
         else System.out.println("nonintersecting");
