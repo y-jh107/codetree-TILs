@@ -9,6 +9,13 @@ public class Main {
 
         boolean isOverlap = false;
 
+        for(int i = x1; i <= x2; i ++) {
+            if(i == x3 || i == x4) {
+                isOverlap = true;
+                break;
+            }
+        }
+
         for(int i = x3; i <= x4; i ++) {
             if(i == x1 || i == x2) {
                 isOverlap = true;
