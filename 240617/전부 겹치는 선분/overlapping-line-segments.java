@@ -32,6 +32,7 @@ public class Main {
             if(!isTrue(line[i][0], line[i][1], x3, x4)) {
                 isColapse = false;
                 System.out.println("No");
+                break;
             }
         }
 
