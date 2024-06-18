@@ -38,12 +38,16 @@ public class Main {
             line[i][0] = sc.nextInt();
             line[i][1] = sc.nextInt();
         }
-
+        
+        boolean flag = false;
         for(int i = 0; i < n; i ++) {
             if(isColapsed(line[i][0], line[i][1])) {
                 System.out.println("Yes");
+                flag = true;
                 break;
             }
         }
+
+        if(!falg) System.out.println("No")
     }
 }
