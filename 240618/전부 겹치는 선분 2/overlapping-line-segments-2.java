@@ -48,6 +48,6 @@ public class Main {
             }
         }
 
-        if(!falg) System.out.println("No")
+        if(!falg) System.out.println("No");
     }
 }
