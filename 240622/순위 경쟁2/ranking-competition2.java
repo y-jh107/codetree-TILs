@@ -41,9 +41,9 @@ public class Main {
 
         int ans = 0;
 
-        for(int i = 1; i < n; i ++) {
+        for(int i = 1; i <= n; i ++) {
             //System.out.println(winner[i]);
-            if(winner[i] != winner[i + 1]) {
+            if(winner[i] != winner[i - 1]) {
                 //System.out.println(winner[i + 1]);
                 ans ++;
             }
