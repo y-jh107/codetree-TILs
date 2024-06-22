@@ -36,7 +36,7 @@ public class Main {
             else if(aScore > bScore)
                 winner[i + 1] = 'A';
             else if(aScore == bScore)
-                winner[i + 1] = 'a';
+                winner[i + 1] = ' ';
         }
 
         int ans = 0;
