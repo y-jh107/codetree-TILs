@@ -48,6 +48,7 @@ public class Main {
             }
         }
 
+        if(n == 1) ans = 0;
         System.out.println(ans);
     }
 }
