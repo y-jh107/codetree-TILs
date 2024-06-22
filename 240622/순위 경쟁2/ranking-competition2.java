@@ -36,19 +36,20 @@ public class Main {
             else if(aScore > bScore)
                 winner[i + 1] = 'A';
             else if(aScore == bScore)
-                winner[i + 1] = ' ';
+                winner[i + 1] = 'a';
         }
 
         int ans = 0;
 
-        for(int i = 0; i < n; i ++) {
+        for(int i = 1; i < n; i ++) {
             //System.out.println(winner[i]);
             if(winner[i] != winner[i + 1]) {
+                //System.out.println(winner[i + 1]);
                 ans ++;
             }
         }
 
-        if(n == 1) ans = 0;
+        //if(n == 1) ans = 0;
         System.out.println(ans);
     }
 }
